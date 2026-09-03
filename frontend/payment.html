@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Secure Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header-section">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+
+        <div class="progress-tracker">
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step active">5</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2 class="form-heading">Payment Gateway</h2>
+
+        <div class="premium-payment-box">
+
+            <div class="payment-tabs-sidebar">
+                <div class="pay-tab active" data-target="upi-section">
+                    <i class="fa-solid fa-qrcode"></i>
+                    <span>UPI / QR</span>
+                </div>
+                <div class="pay-tab" data-target="card-section">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Cards</span>
+                </div>
+                <div class="pay-tab" data-target="net-section">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Net Banking</span>
+                </div>
+                <div class="secure-badge-bottom">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>100% Secure</span>
+                </div>
+            </div>
+
+            <div class="payment-content-window">
+
+                <div id="upi-section" class="pay-panel active">
+                    <div class="qr-payment-area">
+                        <div class="qr-wrapper-box">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=SmartLibraryPayment"
+                                alt="QR Code" class="actual-qr-img">
+                            <p class="qr-scan-text">Scan QR to pay</p>
+                        </div>
+                        <div class="or-divider-line"><span>OR</span></div>
+                        <div class="upi-apps-list">
+                            <p class="panel-sub-title">Pay via UPI Apps</p>
+                            <div class="upi-app-btn"><img src="google-pay.png" alt="GPay"> Google Pay</div>
+                            <div class="upi-app-btn"><img src="phone-pe.png" alt="PhonePe"> PhonePe</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="card-section" class="pay-panel">
+                    <p class="panel-sub-title">Enter Card Details</p>
+                    <div class="card-form-mock">
+                        <div class="mock-input-field full">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+                        </div>
+                        <div class="mock-grid-2">
+                            <div class="mock-input-field">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM / YY">
+                            </div>
+                            <div class="mock-input-field">
+                                <label>CVV</label>
+                                <input type="password" placeholder="***">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="net-section" class="pay-panel">
+                    <p class="panel-sub-title">Select Popular Banks</p>
+                    <div class="banks-grid-mock">
+                        <div class="bank-select-btn" data-bank="SBI"><i class="fa-solid fa-landmark"></i> SBI</div>
+                        <div class="bank-select-btn" data-bank="HDFC"><i class="fa-solid fa-landmark"></i> HDFC</div>
+                        <div class="bank-select-btn" data-bank="ICICI"><i class="fa-solid fa-landmark"></i> ICICI</div>
+                        <div class="bank-select-btn" data-bank="RMGB"><i class="fa-solid fa-landmark"></i> RMGB</div>
+                    </div>
+
+                    <div id="bank-login-wrapper" class="bank-login-container">
+                        <div class="bank-login-header">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span id="selected-bank-name">SBI</span> Secure NetBanking Login
+                        </div>
+                        <div class="bank-form-group">
+                            <label for="bankUser">Corporate / Personal User ID</label>
+                            <div class="bank-input-with-icon">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="bankUser" placeholder="Enter your bank user ID">
+                            </div>
+                        </div>
+                        <div class="bank-form-group">
+                            <label for="bankPass">Password / IPIN</label>
+                            <div class="bank-input-with-icon">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="bankPass" placeholder="••••••••">
+                            </div>
+                        </div>
+                        <p class="bank-security-notice">
+                            <i class="fa-solid fa-circle-info"></i> Note: This is a secure simulator. Your credentials are encrypted safely.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div class="plan-btn-container">
+            <button type="button" class="btn-back" onclick="window.location.href='review.html'">
+                <i class="fa-solid fa-arrow-left"></i> Back to Review
+            </button>
+             <button type="button" class="btn-next" onclick="alert('Booking Confirmed!')">
+                Pay Amount $115.00 <i class="fa-solid fa-lock"></i>
+            </button> 
+        </div> -->
+
+        <div class="plan-btn-container">
+            <button type="button" class="btn-back" onclick="window.location.href='review.html'">
+                <i class="fa-solid fa-arrow-left"></i> Back to Review
+            </button>
+            <button type="button" class="btn-next" id="finalPayBtn">
+                Pay Amount ₹0.00 <i class="fa-solid fa-lock"></i>
+            </button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Select Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="header-section">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+        
+        <div class="progress-tracker">
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step active">2</div>
+            <div class="step-line"></div>
+            <div class="step">3</div>
+            <div class="step-line"></div>
+            <div class="step">4</div>
+            <div class="step-line"></div>
+            <div class="step">5</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2 class="form-heading">Create your Library plan</h2>
+        
+        <form action="slot.html" method="GET" id="planForm">
+            
+            <div class="plan-two-column">
+                
+                <div class="plan-left-inputs">
+                    
+                    <div class="input-group">
+                        <label for="mainPlan">Select your plan</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <select id="mainPlan" required>
+                                <option value="" disabled selected>choose your plan 1 week ,1 month ..</option>
+                                <option value="1w">1 Week</option>
+                                <option value="1m">1 Month</option>
+                                <option value="3m">3 Months</option>
+                                <option value="6m">6 Months</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="left: auto; right: 14px; pointer-events: none;"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-top: 20px;">
+                        <label for="duration">Select duration</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-clock"></i>
+                            <select id="duration" required>
+                                <option value="" disabled selected>Choose duration 6 hr, 12hr ..</option>
+                                <option value="6">6 Hours</option>
+                                <option value="12">12 Hours</option>
+                                <option value="18">18 Hours</option>
+                                <option value="24">24 Hours</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="left: auto; right: 14px; pointer-events: none;"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-top: 20px;">
+                        <label for="slot">Select slot</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-business-time"></i>
+                            <select id="slot" required>
+                                <option value="" disabled selected>Choose slot 6-12, 12-6 ..</option>
+                                <option value="6-12">Morning (06:00 AM - 12:00 PM)</option>
+                                <option value="12-6">Afternoon (12:00 PM - 06:00 PM)</option>
+                                <option value="6-24">Evening (06:00 PM - 12:00 AM)</option>
+                                <option value="24-6">Night (12:00 AM - 06:00 AM)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="left: auto; right: 14px; pointer-events: none;"></i>
+                        </div>
+                    </div>
+
+                </div> 
+                
+            <div class="plan-right-media">
+                    <div class="media-placeholder-box">
+                        <!-- <i class="fa-solid fa-building-columns" style="font-size: 64px; color: #a0aec0;"></i> -->
+                        <img src="SmartLibrary.jpg" alt="Smart Library" class="book-cover-img">
+
+                    </div>
+                    <h3>Smart Library</h3>
+
+                </div> 
+            </div> 
+
+            <div class="plan-btn-container">
+                <button type="button" class="btn-back" onclick="window.location.href='registration.html'">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <button type="submit" class="btn-next" >
+                    Proceed to seat selection <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+        </form>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+</html>

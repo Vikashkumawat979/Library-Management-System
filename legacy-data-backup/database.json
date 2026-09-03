@@ -1,0 +1,606 @@
+{
+  "users": [
+    {
+      "userId": "LIB-2026-01",
+      "phone": "9876543210",
+      "photo": "student1.jpg",
+      "idFile": "Aadhar Card.PDF",
+      "plan": "3m",
+      "duration": "12",
+      "totalAmount": "2600.00",
+      "registeredAt": "2026-06-14T08:00:00Z",
+      "expiresAt": "2026-09-12T08:00:00.000Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-05",
+      "name": "Pooja Choudhary",
+      "phone": "+91 91160 12345",
+      "email": "pooja@gmail.com",
+      "address": "45, Rajshree Marg, Rani, Rajasthan",
+      "idProofType": "voter",
+      "photo": "student2.jpg",
+      "idFile": "Voter ID.PDF",
+      "plan": "1m",
+      "duration": "24",
+      "slot": "Morning, Afternoon, Evening, Night",
+      "selectedSeat": "A3",
+      "totalAmount": "2000.00",
+      "registeredAt": "2026-06-08T08:00:00Z",
+      "expiresAt": "2026-07-08T08:00:00Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-VK45",
+      "name": "Vikash Kumawat",
+      "phone": "+91 9876543210",
+      "email": "vikashkumawat@gmail.com",
+      "address": "Rani, pali, Rajasthan, India ",
+      "idProofType": "aadhaar",
+      "photo": "VIKASH.jpeg",
+      "idFile": "Aadhar Card.PDF",
+      "plan": "1m",
+      "duration": "6",
+      "slot": "Evening",
+      "selectedSeat": "B5",
+      "totalAmount": "500.00",
+      "registeredAt": "2026-06-20T08:00:00Z",
+      "expiresAt": "2026-07-20T08:00:00.000Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783949499841",
+          "text": "hello vikash",
+          "timestamp": "2026-07-13T13:31:39.841Z"
+        },
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        },
+        {
+          "messageId": "msg-1783668407809",
+          "text": "Your seat will close in 10 minutes!",
+          "timestamp": "2026-07-10T07:26:47.809Z"
+        },
+        {
+          "messageId": "msg-1783500811783",
+          "text": "Hello, this is a test notification from the librarian admin!",
+          "timestamp": "2026-07-08T08:53:31.783Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-VK53",
+      "name": "fuaram",
+      "phone": "6375382696",
+      "email": "choudharyf873@gmail.com",
+      "address": "Aaiji corner near sunshine",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/1783498286851-122514762.jpg",
+      "idFile": "31.jpg",
+      "plan": "1w",
+      "duration": "12",
+      "slot": "Morning, Afternoon",
+      "selectedSeat": "A1",
+      "totalAmount": "630.00",
+      "registeredAt": "2026-07-08T08:12:18.562Z",
+      "expiresAt": "2026-07-15T08:12:18.563Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-JA90",
+      "name": "jayesh",
+      "phone": "6375382696",
+      "email": "ashokchoudhary80880@gmail.com",
+      "address": "Aaiji corner near sunshine",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/1783499929873-640460687.jpg",
+      "idFile": "31.jpg",
+      "plan": "6m",
+      "duration": "18",
+      "slot": "Morning, Afternoon, Evening",
+      "selectedSeat": "A5",
+      "totalAmount": "7875.00",
+      "registeredAt": "2026-07-08T08:39:29.525Z",
+      "expiresAt": "2027-01-04T08:39:29.525Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-TS49",
+      "name": "Test Student",
+      "phone": "9000000001",
+      "email": "test@gmail.com",
+      "address": "123, Test Lane, Jaipur",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/test.jpg",
+      "idFile": "id.pdf",
+      "plan": "1m",
+      "duration": "6",
+      "slot": "Morning",
+      "selectedSeat": "C1",
+      "totalAmount": "525.00",
+      "registeredAt": "2026-07-10T07:15:11.517Z",
+      "expiresAt": "2026-08-09T07:15:11.518Z",
+      "notifications": [
+        {
+          "messageId": "msg-1783668498507",
+          "text": "Library closed tomorrow for maintenance.",
+          "timestamp": "2026-07-10T07:28:18.507Z"
+        }
+      ]
+    },
+    {
+      "userId": "LIB-2026-HA20",
+      "name": "hashmukh",
+      "phone": "9166978044",
+      "email": "kumawatvikash816@gmail.com",
+      "address": "rani",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/1783950220595-436635357.png",
+      "idFile": "ChatGPT Image Jun 25, 2026, 10_58_05 AM.png",
+      "plan": "1w",
+      "duration": "12",
+      "slot": "Morning, Afternoon",
+      "selectedSeat": "A1",
+      "totalAmount": "630.00",
+      "registeredAt": "2026-07-13T13:44:14.629Z",
+      "expiresAt": "2026-07-20T13:44:14.629Z"
+    },
+    {
+      "userId": "LIB-2026-HA40",
+      "name": "hashmukh",
+      "phone": "9166978044",
+      "email": "kumawatvikash816@gmail.com",
+      "address": "rani",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/1783950220595-436635357.png",
+      "idFile": "ChatGPT Image Jun 25, 2026, 10_58_05 AM.png",
+      "plan": "1w",
+      "duration": "12",
+      "slot": "Morning, Afternoon",
+      "selectedSeat": "A1",
+      "totalAmount": "630.00",
+      "registeredAt": "2026-07-13T13:53:39.209Z",
+      "expiresAt": "2026-07-20T13:53:39.209Z"
+    },
+    {
+      "userId": "LIB-2026-HA43",
+      "name": "hashmukh",
+      "phone": "9166978044",
+      "email": "kumawatvikash816@gmail.com",
+      "address": "rani",
+      "idProofType": "aadhaar",
+      "photo": "/uploads/1783950220595-436635357.png",
+      "idFile": "ChatGPT Image Jun 25, 2026, 10_58_05 AM.png",
+      "plan": "1w",
+      "duration": "12",
+      "slot": "Morning, Afternoon",
+      "selectedSeat": "A1",
+      "totalAmount": "630.00",
+      "registeredAt": "2026-07-13T13:54:16.385Z",
+      "expiresAt": "2026-07-20T13:54:16.385Z"
+    }
+  ],
+  "books": [
+    {
+      "bookId": "101",
+      "title": "Core Python Programming",
+      "category": "computer",
+      "totalStock": 3,
+      "currentStock": 3
+    },
+    {
+      "bookId": "102",
+      "title": "Advance Software Engineering",
+      "category": "computer",
+      "totalStock": 2,
+      "currentStock": 1
+    },
+    {
+      "bookId": "103",
+      "title": "Database Management System",
+      "category": "computer",
+      "totalStock": 4,
+      "currentStock": 4
+    },
+    {
+      "bookId": "104",
+      "title": "Web Development Bootcamp",
+      "category": "computer",
+      "totalStock": 3,
+      "currentStock": 2
+    },
+    {
+      "bookId": "105",
+      "title": "Artificial Intelligence Fundamentals",
+      "category": "computer",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "106",
+      "title": "Data Structures & Algorithms",
+      "category": "computer",
+      "totalStock": 5,
+      "currentStock": 5
+    },
+    {
+      "bookId": "201",
+      "title": "The Standard Story Book",
+      "category": "story",
+      "totalStock": 5,
+      "currentStock": 4
+    },
+    {
+      "bookId": "202",
+      "title": "Historical Tales",
+      "category": "story",
+      "totalStock": 4,
+      "currentStock": 3
+    },
+    {
+      "bookId": "203",
+      "title": "Fictional Legends",
+      "category": "story",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "204",
+      "title": "Classic Literature Anthology",
+      "category": "story",
+      "totalStock": 3,
+      "currentStock": 3
+    },
+    {
+      "bookId": "301",
+      "title": "Modern Physics Concepts",
+      "category": "science",
+      "totalStock": 3,
+      "currentStock": 3
+    },
+    {
+      "bookId": "302",
+      "title": "Organic Chemistry Notes",
+      "category": "science",
+      "totalStock": 3,
+      "currentStock": 3
+    },
+    {
+      "bookId": "303",
+      "title": "Astrophysics for Beginners",
+      "category": "science",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "304",
+      "title": "Quantum Mechanics Guides",
+      "category": "science",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "401",
+      "title": "Human Anatomy Guide",
+      "category": "biology",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "402",
+      "title": "Plant Cell Structures",
+      "category": "biology",
+      "totalStock": 3,
+      "currentStock": 3
+    },
+    {
+      "bookId": "403",
+      "title": "Genetics Fundamentals",
+      "category": "biology",
+      "totalStock": 2,
+      "currentStock": 2
+    },
+    {
+      "bookId": "404",
+      "title": "Marine Biology Exploration",
+      "category": "biology",
+      "totalStock": 2,
+      "currentStock": 2
+    }
+  ],
+  "issuedBooks": [
+    {
+      "transactionId": "tx-002",
+      "userId": "LIB-2026-VK45",
+      "bookId": "102",
+      "actionType": "assign",
+      "timestamp": "2026-07-04T12:30:00Z"
+    },
+    {
+      "transactionId": "tx-003",
+      "userId": "LIB-2026-VK45",
+      "bookId": "201",
+      "actionType": "assign",
+      "timestamp": "2026-07-06T15:00:00Z"
+    },
+    {
+      "transactionId": "tx-004",
+      "userId": "LIB-2026-VK45",
+      "bookId": "202",
+      "actionType": "assign",
+      "timestamp": "2026-07-07T09:15:00Z"
+    },
+    {
+      "transactionId": "tx-1783500946085",
+      "userId": "LIB-2026-JA90",
+      "bookId": "104",
+      "actionType": "assign",
+      "timestamp": "2026-07-08T08:55:46.085Z"
+    }
+  ],
+  "logs": [
+    {
+      "logId": "log-1783950856401",
+      "text": "Student hashmukh (LIB-2026-HA43) registered successfully.",
+      "timestamp": "2026-07-13T13:54:16.401Z"
+    },
+    {
+      "logId": "log-1783950819216",
+      "text": "Student hashmukh (LIB-2026-HA40) registered successfully.",
+      "timestamp": "2026-07-13T13:53:39.221Z"
+    },
+    {
+      "logId": "log-1783950254640",
+      "text": "Student hashmukh (LIB-2026-HA20) registered successfully.",
+      "timestamp": "2026-07-13T13:44:14.640Z"
+    },
+    {
+      "logId": "log-1783949820391",
+      "text": "New slot 'late night' (10) added by admin.",
+      "timestamp": "2026-07-13T13:37:00.391Z"
+    },
+    {
+      "logId": "log-1783949628749",
+      "text": "Student profile for Vikash Kumawat (LIB-2026-VK45) updated.",
+      "timestamp": "2026-07-13T13:33:48.749Z"
+    },
+    {
+      "logId": "log-1783949499855",
+      "text": "Notification sent to student Vikash Kumawat (LIB-2026-VK45).",
+      "timestamp": "2026-07-13T13:31:39.855Z"
+    },
+    {
+      "logId": "log-1783949413094",
+      "text": "Book 'Core Python Programming' (101) returned by Vikash Kumawat (LIB-2026-VK45).",
+      "timestamp": "2026-07-13T13:30:13.094Z"
+    },
+    {
+      "logId": "log-1783669527712",
+      "text": "Slot 'Late Night' (22-4) deleted by admin.",
+      "timestamp": "2026-07-10T07:45:27.712Z"
+    },
+    {
+      "logId": "log-1783669482362",
+      "text": "New slot 'Late Night' (22-4) added by admin.",
+      "timestamp": "2026-07-10T07:44:42.362Z"
+    },
+    {
+      "logId": "log-1783669327521",
+      "text": "Plan price updated: 6h / 1m → ₹500 by admin.",
+      "timestamp": "2026-07-10T07:42:07.521Z"
+    },
+    {
+      "logId": "log-1783669297841",
+      "text": "Plan price updated: 6h / 1m → ₹550 by admin.",
+      "timestamp": "2026-07-10T07:41:37.841Z"
+    },
+    {
+      "logId": "log-1783669097774",
+      "text": "Book 'Advanced Node.js Programming' (#501) completely removed from database.",
+      "timestamp": "2026-07-10T07:38:17.774Z"
+    },
+    {
+      "logId": "log-1783669076003",
+      "text": "Deleted 2 copies of 'Advanced Node.js Programming' (#501). Total stock: 6.",
+      "timestamp": "2026-07-10T07:37:56.003Z"
+    },
+    {
+      "logId": "log-1783668915161",
+      "text": "Book 'Advanced Node.js Programming' (501) issued to Vikash Kumawat (LIB-2026-VK45).",
+      "timestamp": "2026-07-10T07:35:15.161Z"
+    },
+    {
+      "logId": "log-1783668765948",
+      "text": "Book 'Advanced Node.js Programming' (#501) details updated by admin.",
+      "timestamp": "2026-07-10T07:32:45.948Z"
+    },
+    {
+      "logId": "log-1783668693068",
+      "text": "Book 'Advanced Node.js' (#501) added to inventory.",
+      "timestamp": "2026-07-10T07:31:33.068Z"
+    },
+    {
+      "logId": "log-1783668498511",
+      "text": "Broadcast notification sent to all students.",
+      "timestamp": "2026-07-10T07:28:18.511Z"
+    },
+    {
+      "logId": "log-1783668407812",
+      "text": "Notification sent to student Vikash Kumawat (LIB-2026-VK45).",
+      "timestamp": "2026-07-10T07:26:47.812Z"
+    },
+    {
+      "logId": "log-1783668203838",
+      "text": "Student profile for undefined (LIB-2026-01) updated.",
+      "timestamp": "2026-07-10T07:23:23.838Z"
+    },
+    {
+      "logId": "log-1783667711525",
+      "text": "Student Test Student (LIB-2026-TS49) registered successfully.",
+      "timestamp": "2026-07-10T07:15:11.525Z"
+    },
+    {
+      "logId": "log-1783502208756",
+      "text": "Book 'Quantity Test Book' (#QTY-100) completely removed from database.",
+      "timestamp": "2026-07-08T09:16:48.756Z"
+    },
+    {
+      "logId": "log-1783502201438",
+      "text": "Deleted 3 copies of 'Quantity Test Book' (#QTY-100). Total stock: 7.",
+      "timestamp": "2026-07-08T09:16:41.438Z"
+    },
+    {
+      "logId": "log-1783502193994",
+      "text": "Book 'Quantity Test Book' (#QTY-100) added to inventory.",
+      "timestamp": "2026-07-08T09:16:33.994Z"
+    },
+    {
+      "logId": "log-1783501740753",
+      "text": "Book 'gaming' (#1023) deleted from inventory.",
+      "timestamp": "2026-07-08T09:09:00.753Z"
+    },
+    {
+      "logId": "log-1783501713381",
+      "text": "Book 'gaming' (#1023) added to inventory.",
+      "timestamp": "2026-07-08T09:08:33.381Z"
+    },
+    {
+      "logId": "log-1783501245118",
+      "text": "Student fuaram (LIB-2026-VK50) was deleted and desk A6 was freed.",
+      "timestamp": "2026-07-08T09:00:45.118Z"
+    },
+    {
+      "logId": "log-1783500946090",
+      "text": "Book 'Web Development Bootcamp' (104) issued to jayesh (LIB-2026-JA90).",
+      "timestamp": "2026-07-08T08:55:46.090Z"
+    },
+    {
+      "logId": "log-1783500811788",
+      "text": "Notification sent to student Vikash Kumawat (LIB-2026-VK45).",
+      "timestamp": "2026-07-08T08:53:31.788Z"
+    },
+    {
+      "logId": "log-1783500803473",
+      "text": "Book 'New Test Book' (#TEST-999) deleted from inventory.",
+      "timestamp": "2026-07-08T08:53:23.473Z"
+    },
+    {
+      "logId": "log-1783500794397",
+      "text": "Book 'New Test Book' (#TEST-999) added to inventory.",
+      "timestamp": "2026-07-08T08:53:14.398Z"
+    },
+    {
+      "logId": "log-1783499969541",
+      "text": "Student jayesh (LIB-2026-JA90) registered successfully.",
+      "timestamp": "2026-07-08T08:39:29.541Z"
+    },
+    {
+      "logId": "log-1783499546469",
+      "text": "Student Rahul Sharma (LIB-2026-RS48) was deleted and desk B6 was freed.",
+      "timestamp": "2026-07-08T08:32:26.469Z"
+    },
+    {
+      "logId": "log-1783499535312",
+      "text": "Student Rahul Sharma (LIB-2026-RS48) registered successfully.",
+      "timestamp": "2026-07-08T08:32:15.312Z"
+    },
+    {
+      "logId": "log-1783499118725",
+      "text": "Book 'Web Development Bootcamp' (104) issued to fuaram (LIB-2026-VK50).",
+      "timestamp": "2026-07-08T08:25:18.725Z"
+    },
+    {
+      "logId": "log-1783499003534",
+      "text": "Student fuaram (LIB-2026-VK50) registered successfully.",
+      "timestamp": "2026-07-08T08:23:23.534Z"
+    },
+    {
+      "logId": "log-1783498338580",
+      "text": "Student fuaram (LIB-2026-VK53) registered successfully.",
+      "timestamp": "2026-07-08T08:12:18.581Z"
+    },
+    {
+      "logId": "log-001",
+      "text": "System Initialized.",
+      "timestamp": "2026-07-08T07:30:00Z"
+    }
+  ],
+  "slots": [
+    {
+      "value": "6-12",
+      "name": "Morning",
+      "display": "Morning (06:00 AM - 12:00 PM)"
+    },
+    {
+      "value": "12-6",
+      "name": "Afternoon",
+      "display": "Afternoon (12:00 PM - 06:00 PM)"
+    },
+    {
+      "value": "6-24",
+      "name": "Evening",
+      "display": "Evening (06:00 PM - 12:00 AM)"
+    },
+    {
+      "value": "24-6",
+      "name": "Night",
+      "display": "Night (12:00 AM - 06:00 AM)"
+    },
+    {
+      "name": "late night",
+      "display": "10pm - 4am",
+      "value": "10"
+    }
+  ],
+  "prices": {
+    "6": {
+      "1w": 300,
+      "1m": 500,
+      "3m": 1300,
+      "6m": 2500
+    },
+    "12": {
+      "1w": 600,
+      "1m": 1000,
+      "3m": 2600,
+      "6m": 5000
+    },
+    "18": {
+      "1w": 900,
+      "1m": 1500,
+      "3m": 3900,
+      "6m": 7500
+    },
+    "24": {
+      "1w": 1200,
+      "1m": 2000,
+      "3m": 5200,
+      "6m": 10000
+    }
+  }
+}

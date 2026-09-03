@@ -1,0 +1,22 @@
+{
+  "name": "smart-library-backend",
+  "version": "2.0.0",
+  "description": "Full-stack Backend for Library Management System (PostgreSQL edition)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "migrate-data": "node db/migrate-legacy-data.js"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14",
+    "pg": "^8.22.0"
+  }
+}

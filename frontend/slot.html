@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Select Your Seat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header-section">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+
+        <div class="progress-tracker">
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step active">3</div>
+            <div class="step-line"></div>
+            <div class="step">4</div>
+            <div class="step-line"></div>
+            <div class="step">5</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2 class="form-heading">Choose your Preferred Seat</h2>
+
+        <div class="seat-indicators">
+            <div class="ind-item"><span class="seat-box available"></span> Available</div>
+            <div class="ind-item"><span class="seat-box selected-demo"></span> Your Choice</div>
+            <div class="ind-item"><span class="seat-box booked"></span> Booked</div>
+        </div>
+
+        <div class="library-map-wrapper">
+
+            <div class="time-slot-card">
+                <div class="slot-container" id="slot-morning" data-slot-name="Morning"
+                    data-slot-time="S1: 06:00 AM to 12:00 PM">
+                    <div class="slot-header">
+                        <span class="slot-title">Seat Status (Morning)</span>
+                        <span class="slot-time">S1: 06:00 AM to 12:00 PM</span>
+                    </div>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="A1">A1</div>
+                        <div class="seat available" data-seat="A2">A2</div>
+                        <div class="seat booked" data-seat="A3">A3</div>
+                        <div class="seat available" data-seat="A4">A4</div>
+                        <div class="seat available" data-seat="A5">A5</div>
+                        <div class="seat booked" data-seat="A6">A6</div>
+                        <div class="seat available" data-seat="A7">A7</div>
+                        <div class="seat available" data-seat="A8">A8</div>
+                        <div class="seat available" data-seat="A9">A9</div>
+                        <div class="seat available" data-seat="A10">A10</div>
+                        <div class="seat available" data-seat="B1">B1</div>
+                        <div class="seat booked" data-seat="B2">B2</div>
+                        <div class="seat available" data-seat="B3">B3</div>
+                        <div class="seat available" data-seat="B4">B4</div>
+                        <div class="seat available" data-seat="B5">B5</div>
+                        <div class="seat available" data-seat="B6">B6</div>
+                        <div class="seat booked" data-seat="B7">B7</div>
+                        <div class="seat available" data-seat="B8">B8</div>
+                        <div class="seat available" data-seat="B9">B9</div>
+                        <div class="seat available" data-seat="B10">B10</div>
+                        <div class="seat available" data-seat="C1">C1</div>
+                        <div class="seat available" data-seat="C2">C2</div>
+                        <div class="seat available" data-seat="C3">C3</div>
+                        <div class="seat booked" data-seat="C4">C4</div>
+                        <div class="seat available" data-seat="C5">C5</div>
+                        <div class="seat available" data-seat="C6">C6</div>
+                        <div class="seat available" data-seat="C7">C7</div>
+                        <div class="seat available" data-seat="C8">C8</div>
+                        <div class="seat available" data-seat="C9">C9</div>
+                        <div class="seat available" data-seat="C10">C10</div>
+                    </div>
+                </div>
+
+                <div class="slot-container" id="slot-afternoon" data-slot-name="Afternoon"
+                    data-slot-time="S2: 12:00 PM to 06:00 PM" style="display: none;">
+                    <div class="slot-header">
+                        <span class="slot-title">Seat Status (Afternoon)</span>
+                        <span class="slot-time">S2: 12:00 PM to 06:00 PM</span>
+                    </div>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="A1">A1</div>
+                        <div class="seat available" data-seat="A2">A2</div>
+                        <div class="seat available" data-seat="A3">A3</div>
+                        <div class="seat booked" data-seat="A4">A4</div>
+                        <div class="seat available" data-seat="A5">A5</div>
+                        <div class="seat available" data-seat="A6">A6</div>
+                        <div class="seat available" data-seat="A7">A7</div>
+                        <div class="seat available" data-seat="A8">A8</div>
+                        <div class="seat available" data-seat="A9">A9</div>
+                        <div class="seat available" data-seat="A10">A10</div>
+                        <div class="seat available" data-seat="B1">B1</div>
+                        <div class="seat available" data-seat="B2">B2</div>
+                        <div class="seat available" data-seat="B3">B3</div>
+                        <div class="seat available" data-seat="B4">B4</div>
+                        <div class="seat booked" data-seat="B5">B5</div>
+                        <div class="seat available" data-seat="B6">B6</div>
+                        <div class="seat available" data-seat="B7">B7</div>
+                        <div class="seat available" data-seat="B8">B8</div>
+                        <div class="seat available" data-seat="B9">B9</div>
+                        <div class="seat available" data-seat="B10">B10</div>
+                        <div class="seat available" data-seat="C1">C1</div>
+                        <div class="seat available" data-seat="C2">C2</div>
+                        <div class="seat booked" data-seat="C3">C3</div>
+                        <div class="seat available" data-seat="C4">C4</div>
+                        <div class="seat available" data-seat="C5">C5</div>
+                        <div class="seat available" data-seat="C6">C6</div>
+                        <div class="seat available" data-seat="C7">C7</div>
+                        <div class="seat available" data-seat="C8">C8</div>
+                        <div class="seat available" data-seat="C9">C9</div>
+                        <div class="seat available" data-seat="C10">C10</div>
+                    </div>
+                </div>
+
+                <div class="slot-container" id="slot-evening" data-slot-name="Evening"
+                    data-slot-time="S3: 06:00 PM to 12:00 AM" style="display: none;">
+                    <div class="slot-header">
+                        <span class="slot-title">Seat Status (Evening)</span>
+                        <span class="slot-time">S3: 06:00 PM to 12:00 AM</span>
+                    </div>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="A1">A1</div>
+                        <div class="seat booked" data-seat="A2">A2</div>
+                        <div class="seat available" data-seat="A3">A3</div>
+                        <div class="seat available" data-seat="A4">A4</div>
+                        <div class="seat available" data-seat="A5">A5</div>
+                        <div class="seat available" data-seat="A6">A6</div>
+                        <div class="seat available" data-seat="A7">A7</div>
+                        <div class="seat available" data-seat="A8">A8</div>
+                        <div class="seat available" data-seat="A9">A9</div>
+                        <div class="seat available" data-seat="A10">A10</div>
+                        <div class="seat available" data-seat="B1">B1</div>
+                        <div class="seat available" data-seat="B2">B2</div>
+                        <div class="seat available" data-seat="B3">B3</div>
+                        <div class="seat available" data-seat="B4">B4</div>
+                        <div class="seat available" data-seat="B5">B5</div>
+                        <div class="seat available" data-seat="B6">B6</div>
+                        <div class="seat available" data-seat="B7">B7</div>
+                        <div class="seat booked" data-seat="B8">B8</div>
+                        <div class="seat available" data-seat="B9">B9</div>
+                        <div class="seat available" data-seat="B10">B10</div>
+                        <div class="seat available" data-seat="C1">C1</div>
+                        <div class="seat available" data-seat="C2">C2</div>
+                        <div class="seat available" data-seat="C3">C3</div>
+                        <div class="seat available" data-seat="C4">C4</div>
+                        <div class="seat booked" data-seat="C5">C5</div>
+                        <div class="seat available" data-seat="C6">C6</div>
+                        <div class="seat available" data-seat="C7">C7</div>
+                        <div class="seat available" data-seat="C8">C8</div>
+                        <div class="seat available" data-seat="C9">C9</div>
+                        <div class="seat available" data-seat="C10">C10</div>
+                    </div>
+                </div>
+
+                <div class="slot-container" id="slot-night" data-slot-name="Night"
+                    data-slot-time="S4: 12:00 AM to 06:00 AM" style="display: none;">
+                    <div class="slot-header">
+                        <span class="slot-title">Seat Status (Night)</span>
+                        <span class="slot-time">S4: 12:00 AM to 06:00 AM</span>
+                    </div>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="A1">A1</div>
+                        <div class="seat available" data-seat="A2">A2</div>
+                        <div class="seat available" data-seat="A3">A3</div>
+                        <div class="seat available" data-seat="A4">A4</div>
+                        <div class="seat available" data-seat="A5">A5</div>
+                        <div class="seat available" data-seat="A6">A6</div>
+                        <div class="seat available" data-seat="A7">A7</div>
+                        <div class="seat booked" data-seat="A8">A8</div>
+                        <div class="seat available" data-seat="A9">A9</div>
+                        <div class="seat available" data-seat="A10">A10</div>
+                        <div class="seat available" data-seat="B1">B1</div>
+                        <div class="seat available" data-seat="B2">B2</div>
+                        <div class="seat booked" data-seat="B3">B3</div>
+                        <div class="seat available" data-seat="B4">B4</div>
+                        <div class="seat available" data-seat="B5">B5</div>
+                        <div class="seat available" data-seat="B6">B6</div>
+                        <div class="seat available" data-seat="B7">B7</div>
+                        <div class="seat available" data-seat="B8">B8</div>
+                        <div class="seat available" data-seat="B9">B9</div>
+                        <div class="seat available" data-seat="B10">B10</div>
+                        <div class="seat available" data-seat="C1">C1</div>
+                        <div class="seat available" data-seat="C2">C2</div>
+                        <div class="seat available" data-seat="C3">C3</div>
+                        <div class="seat available" data-seat="C4">C4</div>
+                        <div class="seat available" data-seat="C5">C5</div>
+                        <div class="seat available" data-seat="C6">C6</div>
+                        <div class="seat available" data-seat="C7">C7</div>
+                        <div class="seat booked" data-seat="C8">C8</div>
+                        <div class="seat available" data-seat="C9">C9</div>
+                        <div class="seat available" data-seat="C10">C10</div>
+                    </div>
+                </div>
+
+                <div class="slot-pagination" id="dynamic-pagination">
+                    <button class="pagination-arrow prev-btn">&lt;</button>
+                    <div class="dots-wrapper" style="display: inline-flex; gap: 8px; align-items: center;"></div>
+                    <button class="pagination-arrow next-btn">&gt;</button>
+                </div>
+            </div>
+
+            <div class="plan-btn-container">
+                <button type="button" class="btn-back" onclick="window.location.href='plan.html'">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <button type="button" class="btn-next">
+                    Confirm & Continue <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+    </main>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

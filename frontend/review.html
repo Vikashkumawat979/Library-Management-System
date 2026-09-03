@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Review Your Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header-section">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+
+        <div class="progress-tracker">
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step done"><i class="fa-solid fa-check"></i></div>
+            <div class="step-line"></div>
+            <div class="step active">4</div>
+            <div class="step-line"></div>
+            <div class="step">5</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2 class="form-heading">Review Your Details</h2>
+
+        <div class="library-map-wrapper">
+            <div class="review-card">
+                
+                <fieldset class="review-section">
+                    <legend class="section-legend">Plan details</legend>
+                    <div class="details-grid-4">
+                        <div class="detail-item">
+                            <label class="review-label">Plan type</label>
+                            <span class="review-value">1 month</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Plan duration</label>
+                            <span class="review-value">6 hour</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Plan slot</label>
+                            <span class="review-value">6 am to 12 pm</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Seat number</label>
+                            <span class="review-value highlight-seat">12</span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="review-section">
+                    <legend class="section-legend">Personal details</legend>
+                    <div class="details-grid-2">
+                        <div class="detail-item">
+                            <label class="review-label">Full name</label>
+                            <div class="review-text-bold">Vikash Kumawat</div>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Mobile no.</label>
+                            <div class="review-text-bold">+91 1234567890</div>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Email id</label>
+                            <div class="review-text-bold">vikashkumawat@gmail.com</div>
+                        </div>
+                        <div class="detail-item">
+                            <label class="review-label">Address</label>
+                            <div class="review-text-address">rani chungi naka</div>
+                        </div>
+                    </div>
+
+                    <div class="files-preview-container">
+                        <div class="file-preview-box">
+                            <span class="file-label-top">photo</span>
+                            <div class="file-info">
+                                <span class="file-icon"><i class="fa-regular fa-file-image"></i></span>
+                                <div class="file-meta">
+                                    <span class="file-name">VIKASH.jpg</span>
+                                    <span class="file-size">(JPG 200KB)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-preview-box">
+                            <span class="file-label-top">ID proof</span>
+                            <div class="file-info">
+                                <span class="file-icon"><i class="fa-regular fa-file-pdf"></i></span>
+                                <div class="file-meta">
+                                    <span class="file-name">Aadhar Card.PDF</span>
+                                    <span class="file-size">(PDF 250KB)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="review-section">
+                    <legend class="section-legend">Billing summary</legend>
+                    <div class="billing-grid">
+                        <div class="billing-item">
+                            <label class="review-label">Plan price</label>
+                            <div class="billing-price">₹100.00</div>
+                        </div>
+                        <div class="billing-item">
+                            <label class="review-label">GST (5%)</label>
+                            <div class="billing-price">₹5.00</div>
+                        </div>
+                        <div class="billing-divider"></div>
+                        <div class="billing-item total-box">
+                            <label class="review-label-total">Total amount</label>
+                            <div class="total-amount-box">₹105.00</div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="confirmation-area">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="confirm-checkbox" required>
+                        I confirm that all details are correct.
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="plan-btn-container">
+            <button type="button" class="btn-back" onclick="window.location.href='slot.html'">
+                <i class="fa-solid fa-arrow-left"></i> Edit
+            </button>
+            <button type="button" class="btn-next" >
+                Pay Amount ₹105.00 <i class="fa-solid fa-lock"></i>
+            </button>
+            <!-- <button type="button" class="btn-next" onclick="window.location.href='payment.html'">
+                Proceed to Payment <i class="fa-solid fa-arrow-right"></i>
+            </button> -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+ 

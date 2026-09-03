@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header-section">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+        
+        <div class="progress-tracker">
+            <div class="step active">1</div>
+            <div class="step-line"></div>
+            <div class="step">2</div>
+            <div class="step-line"></div>
+            <div class="step">3</div>
+            <div class="step-line"></div>
+            <div class="step">4</div>
+            <div class="step-line"></div>
+            <div class="step">5</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2 class="form-heading">Fill your details</h2>
+
+        <form  id="regForm">
+            <div class="form-grid">
+                
+                <div class="input-group">
+                    <label for="studentName">Student name</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="studentName" placeholder="Enter Student name" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="mobileNo">Mobile No.</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="mobileNo" placeholder="Enter your mobile number" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="emailId">Email ID</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="emailId" placeholder="Enter your email id" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="idProofType">Select id proof</label>
+                    <div class="input-wrapper">
+                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                        <select id="idProofType" required>
+                            <option value="" disabled selected>Select id proof</option>
+                            <option value="aadhaar">Aadhaar Card</option>
+                            <option value="pan">PAN Card</option>
+                            <option value="voter">Voter ID</option>
+                            <option value="student">College ID</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down" style="left: auto; right: 14px; pointer-events: none;"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Upload your photo (Passport Size)</label>
+                    <div class="input-wrapper" style="display: block;">
+                        <i class="fa-regular fa-image" style="z-index: 5; top: 15px;"></i>
+                        <input type="file" id="userPhoto" accept="image/*" style="display: none;">
+                        <div class="upload-wrapper" onclick="document.getElementById('userPhoto').click()">
+                            <span>upload your photo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Upload id proof</label>
+                    <div class="input-wrapper" style="display: block;">
+                        <i class="fa-solid fa-file-arrow-up" style="z-index: 5; top: 15px;"></i>
+                        <input type="file" id="idFile" accept=".pdf,image/*" style="display: none;">
+                        <div class="upload-wrapper" onclick="document.getElementById('idFile').click()">
+                            <span>upload id proof</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="address">Add complete address</label>
+                    <div class="input-wrapper">
+                        <textarea id="address" placeholder="Enter complete address" required></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn-next" >
+                    Next: Choose Plan <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </form>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

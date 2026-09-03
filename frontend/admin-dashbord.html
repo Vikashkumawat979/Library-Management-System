@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Admin Premium Console</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <header class="header-section-dashbord">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library <strong style="color: #007bff; font-size: 0.8rem; margin-left: 5px;">ADMIN</strong></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-item active" data-target="admin-home">
+                <i class="fa-solid fa-chart-pie"></i> OVERVIEW
+            </a>
+            <a href="#" class="nav-item" data-target="admin-users">
+                <i class="fa-solid fa-users"></i> USERS
+            </a>
+            <a href="#" class="nav-item" data-target="books-section">
+                <i class="fa-solid fa-book"></i> BOOKS STOCK
+            </a>
+            <a href="#" class="nav-item" data-target="admin-plans">
+                <i class="fa-solid fa-layer-group"></i> PLANS
+            </a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="nav-icon-btn" id="notification-trigger" title="Live Action Logs">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+            <div class="user-profile-widget" id="profile-widget-trigger">
+                <img src="VIKASH.jpeg" alt="Admin" class="user-avatar">
+                <div class="user-meta-info">
+                    <span class="user-name">Vikash Kumawat</span>
+                    <span class="user-role">Library Owner</span>
+                </div>
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content-window">
+
+        <section id="admin-home" class="dashboard-viewport-section active">
+            <div class="luxury-dashboard-wrapper">
+                <div class="premium-hero-card">
+                    <div class="hero-left-content">
+                        <h1>Welcome to Admi, Vikash Kumawat!</h1>
+                        <p>Monitor real-time library usage, manage seat configurations, and view live collection logs.</p>
+                    </div>
+                    <div class="hero-right-badge">
+                        <span class="luxury-pulse-tag"><span class="pulse-core"></span> System Live</span>
+                    </div>
+                </div>
+
+                <div class="luxury-stats-grid">
+                    <div class="glass-stat-card">
+                        <div class="card-icon-wrapper ice-blue"><i class="fa-solid fa-users"></i></div>
+                        <div class="card-info-block">
+                            <span class="metric-number">42</span>
+                            <span class="metric-label">Total Active Members</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-stat-card">
+                        <div class="card-icon-wrapper Amber-gold"><i class="fa-solid fa-couch"></i></div>
+                        <div class="card-info-block">
+                            <span class="metric-number">18 / 50</span>
+                            <span class="metric-label">Seats Occupied Today</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-stat-card" style="min-width: 220px;">
+                        <div class="card-icon-wrapper" style="background: #d1fae5; color: #10b981;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <div class="card-info-block">
+                            <span class="metric-number">₹24,500</span>
+                            <span class="metric-label">This Month Revenue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="luxury-shelf-panel" style="margin-top: 25px;">
+                    <h3>Recent Plan Subscriptions & Payments</h3>
+                    <div class="admin-table-wrapper">
+                        <table class="admin-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Shift / Plan</th>
+                                    <th>Seat No.</th>
+                                    <th>Amount</th>
+                                    <th>Payment Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Rahul Sharma</strong><br><small>UID: #8801</small></td>
+                                    <td>12 Hours (1 Month)</td>
+                                    <td>Seat 12</td>
+                                    <td>₹1,000</td>
+                                    <td><span class="status-pill paid">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Amit Verma</strong><br><small>UID: #8809</small></td>
+                                    <td>06 Hours (1 Month)</td>
+                                    <td>Seat 45</td>
+                                    <td>₹500</td>
+                                    <td><span class="status-pill paid">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pooja Choudhary</strong><br><small>UID: #8812</small></td>
+                                    <td>24 Hours (1 Month)</td>
+                                    <td>Seat 03</td>
+                                    <td>₹2,000</td>
+                                    <td><span class="status-pill paid">Paid</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin-users" class="dashboard-viewport-section">
+            <div class="books-page-container">
+                <div class="books-search-bar-wrapper">
+                    <div class="search-input-box">
+                        <input type="text" id="user-panel-search" placeholder="Search students by Name, UID or Mobile...">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                    <button class="book-assign-action-btn" id="broadcast-trigger" title="Broadcast Notice to All" style="background: #8b5cf6; color: white;">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </button>
+                </div>
+
+                <div class="luxury-shelf-panel" style="margin-top: 15px;">
+                    <h3>All Registered Students Directory</h3>
+                    <div class="admin-table-wrapper">
+                        <table class="admin-data-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Full Name</th>
+                                    <th>Contact No.</th>
+                                    <th>Active Seat</th>
+                                    <th>Plan Validity</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: #718096; padding: 20px 0;">
+                                        <i class="fa-solid fa-spinner fa-spin"></i> Loading registered students directory...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="books-section" class="dashboard-viewport-section">
+            <div class="books-page-container">
+                <div class="books-search-bar-wrapper">
+                    <div class="search-input-box">
+                        <input type="text" id="global-book-search" placeholder="Search complete storage stock...">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                    <button class="book-assign-action-btn" id="add-book-trigger" title="Add New Book" style="background: #10b981; color: white;">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button class="refresh-covers-btn" id="refresh-covers-btn" title="Fetch cover images for any book missing one">
+                        <i class="fa-solid fa-arrows-rotate"></i> Refresh Covers
+                    </button>
+                    <!-- <button class="book-assign-action-btn" id="open-assign-panel-btn" title="Issue / Return Window">
+                        <i class="fa-solid fa-book-medical"></i>
+                    </button> -->
+                </div>
+
+                <div class="books-category-tabs">
+                    <button class="category-tab-btn active" data-category="all">All Inventory</button>
+                    <button class="category-tab-btn" data-category="computer">Computer Sci</button>
+                    <button class="category-tab-btn" data-category="science">Physics/Chem</button>
+                </div>
+
+                <div class="books-scroll-grid" id="books-grid-container">
+                    <div style="grid-column: span 3; text-align: center; color: #718096; padding: 40px 0; width: 100%;">
+                        <i class="fa-solid fa-spinner fa-spin" style="font-size: 32px; margin-bottom: 10px; display: block; color: #cbd5e0;"></i>
+                        Loading books inventory...
+                    </div>
+                </div>
+            </div>
+
+            <div class="assign-drawer-panel" id="assign-book-panel">
+                <button class="assign-drawer-close" id="close-assign-panel-btn-x">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="assign-panel-header">
+                    <h2><i class="fa-solid fa-book-medical"></i> Quick Counter Action</h2>
+                    <p>Process desk issues & manual handovers</p>
+                </div>
+                <div class="drawer-separator"></div>
+                <div class="sub-view-form">
+                    <div class="form-group-item">
+                        <label>Student UID / Enrollment</label>
+                        <input type="text" placeholder="Enter student enrollment number...">
+                    </div>
+                    <div class="form-group-item">
+                        <label>Book Number Code</label>
+                        <input type="text" placeholder="e.g., #101, #204...">
+                    </div>
+                    <div class="form-group-item">
+                        <label>Action Method</label>
+                        <select>
+                            <option value="assign">Issue Asset to Student</option>
+                            <option value="return">Receive Back / Inward</option>
+                        </select>
+                    </div>
+                    <button class="save-preference-btn" style="width: 100%; margin-top: 20px;">Confirm Transaction</button>
+                </div>
+            </div>
+
+            <div class="assign-drawer-panel" id="add-book-panel">
+                <button class="assign-drawer-close" id="close-add-book-panel-btn-x">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="assign-panel-header">
+                    <h2><i class="fa-solid fa-book"></i> Add New Book</h2>
+                    <p>Insert new book details & cover to database</p>
+                </div>
+                <div class="drawer-separator"></div>
+
+                <div class="sub-view-form" style="padding: 10px 0;">
+                    <div class="form-group-item">
+                        <label>Book Title</label>
+                        <input type="text" id="add-book-title" placeholder="Enter book title..." required>
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>Book ID Code</label>
+                        <input type="text" id="add-book-id" placeholder="e.g., 105, 303..." required>
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>Book Category</label>
+                        <select id="add-book-category" required style="width: 100%; padding: 12px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; color: white;">
+                            <option value="computer">Computer Sci</option>
+                            <option value="science">Physics/Chem</option>
+                            <option value="biology">Biology</option>
+                            <option value="story">Story Books</option>
+                        </select>
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>ISBN (recommended — improves auto cover match)</label>
+                        <input type="text" id="add-book-isbn" placeholder="e.g., 9780132350884">
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>Quantity (Total Stock)</label>
+                        <input type="number" id="add-book-stock" value="1" min="1" required>
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>Cover Image URL (optional — leave blank to auto-fetch from ISBN/title)</label>
+                        <input type="text" id="add-book-cover" placeholder="Leave blank to auto-fetch a real cover...">
+                    </div>
+                    <div class="form-group-item" style="margin-top: 15px;">
+                        <label>Dynamic Cover Gradient (Fallback if no cover is found)</label>
+                        <input type="text" id="add-book-gradient" value="linear-gradient(135deg, #3b82f6, #8b5cf6)">
+                    </div>
+                    <p style="font-size: 11px; color: #94a3b8; margin-top: 8px;">
+                        <i class="fa-solid fa-circle-info"></i> If you leave the Cover Image URL blank, the system automatically fetches a real cover from Open Library / Google Books using the ISBN or title.
+                    </p>
+                    <button class="save-preference-btn" id="confirm-add-book-btn" style="width: 100%; margin-top: 25px; background: #10b981;">Add Book to Inventory</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin-plans" class="dashboard-viewport-section">
+            <div class="luxury-dashboard-wrapper">
+
+                <div class="plans-premium-banner">
+                    <div class="banner-left">
+                        <h2><i class="fa-solid fa-sliders" style="color: #3b82f6; margin-right: 8px;"></i> Subscription Plans Control Center</h2>
+                        <p>Configure shift durations, update pricing matrices, and set targeted package limits below.</p>
+                    </div>
+                    <div class="banner-right-actions">
+                        <div class="banner-stat-pill">
+                            <span class="stat-lbl">Active Shifts</span>
+                            <span class="stat-val">4 Fixed Shifts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="library-pricing-grid">
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h4>6 Hours</h4>
+                            <span class="hours-sub">Daily Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹300</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹500</span>
+                                <button class="plan-action-btn Edit-btn"> Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹1,300</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹2,500</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-sun"></i></div>
+                            <h4>12 Hours</h4>
+                            <span class="hours-sub">Half Day Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹600</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹1,000</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹2,600</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹5,000</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-moon"></i></div>
+                            <h4>18 Hours</h4>
+                            <span class="hours-sub">Extended Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹900</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹1,500</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹3,900</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹7,500</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card premium-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <h4>24 Hours</h4>
+                            <span class="hours-sub">Full Day Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹1,200</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹2,000</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹5,200</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹10,000</span>
+                                <button class="plan-action-btn Edit-btn">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="user-modal-overlay" id="userModalOverlay"></div>
+    <div class="user-premium-modal" id="userPremiumModal">
+        <div class="modal-premium-header">
+            <div class="modal-header-left">
+                <i class="fa-solid fa-user-shield"></i>
+                <div>
+                    <h3 id="modalTitle">Student Command Center</h3>
+                    <p id="modalSubTitle">Viewing profile dossier</p>
+                </div>
+            </div>
+            <button class="modal-close-trigger" id="closeUserModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="modal-premium-body">
+            <div class="modal-body-left-aside">
+                <div class="modal-avatar-wrapper">
+                    <img src="placeholder_user.png" alt="Student Photo" id="mPhoto" class="modal-student-img">
+                    <div class="avatar-upload-overlay" id="photoUploadOverlay">
+                        <i class="fa-solid fa-camera"></i>
+                        <span>Change Photo</span>
+                    </div>
+                </div>
+                <h4 id="mNameHeading" class="modal-student-name">Student Name</h4>
+                <span id="mUidTag" class="modal-uid-badge">#UID</span>
+
+                <div class="active-plan-banner-row" style="width: 100%; margin-top: 20px; background: rgba(15, 23, 42, 0.05); border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px;">
+                    <div style="width:100%">
+                        <div class="timeline-meta-text" style="color: #475569;">
+                            <span class="duration-text" id="mDaysPassed">0 Days Done</span>
+                            <span class="pro-days-badge" id="mDaysLeft" style="color: #2563eb;">0 Days Left</span>
+                        </div>
+                        <div class="pro-track-bar" style="background: #e2e8f0; height: 8px;">
+                            <div class="pro-fill-bar" id="mProgressBar" style="width: 0%; background: linear-gradient(to right, #2563eb, #4f46e5);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body-right-form">
+                <form id="studentDossierForm">
+                    <div class="modal-form-grid">
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-id-card"></i> User ID</label>
+                            <input type="text" id="fieldUid" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-signature"></i> Full Name</label>
+                            <input type="text" id="fieldName" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-phone"></i> Contact Number</label>
+                            <input type="text" id="fieldPhone" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                            <input type="email" id="fieldEmail" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-chair"></i> Assigned Seat No.</label>
+                            <input type="text" id="fieldSeat" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-clock"></i> Allocated Slot Time</label>
+                            <input type="text" id="fieldSlot" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-cubes"></i> Active Membership Plan</label>
+                            <input type="text" id="fieldPlan" readonly>
+                        </div>
+                        <div class="modal-input-group">
+                            <label><i class="fa-solid fa-passport"></i> Identity Proof Document</label>
+                            <input type="text" id="fieldIdProof" readonly>
+                        </div>
+                        <div class="modal-input-group full-width-row">
+                            <label><i class="fa-solid fa-map-location-dot"></i> Complete Residential Address</label>
+                            <textarea id="fieldAddress" rows="2" readonly></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer-action-row" id="modalFooterActions">
+                        <button type="button" class="modal-cancel-btn" id="modalCancelBtn">Close Window</button>
+                        <button type="submit" class="modal-save-btn" id="modalSaveBtn" style="display: none;">Save Updates</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-dropdown-box" id="notification-dropdown">
+        <div class="noti-box-header">
+            <h4><i class="fa-regular fa-bell"></i> Live Operations Log</h4>
+            <button class="noti-box-close" id="close-noti-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="noti-box-body">
+            <div class="broadcast-msg-box" style="padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-bullhorn" style="color: #8b5cf6; margin-right: 4px;"></i> Send Broadcast Message to All Users</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="broadcastInput" placeholder="Type message to all students..." style="flex: 1; padding: 8px 12px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; color: white; font-size: 13px; outline: none;">
+                    <button id="broadcastBtn" style="background: #8b5cf6; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; transition: all 0.2s;"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div class="logs-container" id="noti-logs-container">
+                <div class="noti-card alert-blue">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="noti-msg-details">
+                        <h6>New Registration Completed</h6>
+                        <p>Student Amit Verma registered under 6-Hour Morning slot successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-drawer-overlay" id="drawer-overlay"></div>
+    <div class="profile-drawer-panel" id="profile-drawer">
+        <button class="profile-drawer-close" id="close-profile-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div id="drawer-main-content">
+            <div class="drawer-profile-summary">
+                <div class="drawer-avatar-ring">
+                    <img src="VIKASH.jpeg" alt="Admin">
+                </div>
+                <h2>Vikash Kumawat</h2>
+                <p><i class="fa-solid fa-user-gear"></i> System Administrator</p>
+            </div>
+            <hr class="drawer-separator">
+            <div class="drawer-links-stack">
+                <a href="#"><i class="fa-solid fa-gears"></i> Library Master Settings</a>
+                <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Revenue Reports</a>
+                <a href="#" class="drawer-logout-action"><i class="fa-solid fa-arrow-right-from-bracket"></i> Safety Exit Console</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Verify Admin Authentication
+            if (sessionStorage.getItem("userId") !== "admin" || sessionStorage.getItem("role") !== "admin") {
+                sessionStorage.clear();
+                window.location.href = "login.html";
+                return;
+            }
+
+            let studentsList = [];
+            let booksList = [];
+
+            // 1. Navigation tabs
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('.dashboard-viewport-section');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const targetId = item.getAttribute('data-target');
+                    sections.forEach(sec => {
+                        sec.classList.remove('active');
+                        if (sec.id === targetId) sec.classList.add('active');
+                    });
+                });
+            });
+
+            // 2. Profile & Notification Drawer Controls
+            const profileTrigger = document.getElementById('profile-widget-trigger');
+            const profileDrawer = document.getElementById('profile-drawer');
+            const drawerOverlay = document.getElementById('drawer-overlay');
+            const closeProfileBtn = document.getElementById('close-profile-btn');
+            const notiTrigger = document.getElementById('notification-trigger');
+            const notiDropdown = document.getElementById('notification-dropdown');
+            const closeNotiBtn = document.getElementById('close-noti-btn');
+
+            if (profileTrigger) {
+                profileTrigger.addEventListener('click', () => {
+                    profileDrawer.classList.add('open');
+                    drawerOverlay.classList.add('active');
+                    notiDropdown.classList.remove('open');
+                });
+            }
+
+            if (notiTrigger) {
+                notiTrigger.addEventListener('click', () => {
+                    notiDropdown.classList.add('open');
+                    profileDrawer.classList.remove('open');
+                    drawerOverlay.classList.add('active');
+                });
+            }
+
+            const clearAllOverlays = () => {
+                if (profileDrawer) profileDrawer.classList.remove('open');
+                if (notiDropdown) notiDropdown.classList.remove('open');
+                if (drawerOverlay) drawerOverlay.classList.remove('active');
+            };
+
+            if (closeProfileBtn) closeProfileBtn.addEventListener('click', clearAllOverlays);
+            if (closeNotiBtn) closeNotiBtn.addEventListener('click', clearAllOverlays);
+            if (drawerOverlay) drawerOverlay.addEventListener('click', clearAllOverlays);
+
+            // 3. Counter Assign/Return Drawer Control
+            const openAssignBtn = document.getElementById('open-assign-panel-btn');
+            const closeAssignBtnX = document.getElementById('close-assign-panel-btn-x');
+            const assignPanel = document.getElementById('assign-book-panel');
+
+            if (openAssignBtn && assignPanel) {
+                openAssignBtn.addEventListener('click', () => { 
+                    assignPanel.classList.add('open'); 
+                    drawerOverlay.classList.add('active');
+                });
+            }
+            const closeAssignDrawer = () => {
+                if (assignPanel) assignPanel.classList.remove('open');
+                clearAllOverlays();
+            };
+            if (closeAssignBtnX) closeAssignBtnX.addEventListener('click', closeAssignDrawer);
+
+            // 4. Fetch Stats, Payments & Logs (Overview Screen)
+            function loadDashboardStats() {
+                fetch('http://localhost:3001/api/admin/dashboard')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Update Stats Metrics
+                            const metrics = document.querySelectorAll(".metric-number");
+                            if (metrics.length >= 3) {
+                                metrics[0].textContent = data.stats.activeMembers;
+                                metrics[1].textContent = data.stats.seatsOccupied;
+                                metrics[2].textContent = data.stats.revenue;
+                            }
+
+                            // Update Recent Payments Table
+                            const recentTableBody = document.querySelector(".admin-data-table tbody");
+                            if (recentTableBody) {
+                                if (data.recentSubscriptions.length === 0) {
+                                    recentTableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#718096;">No recent bookings found.</td></tr>`;
+                                } else {
+                                    recentTableBody.innerHTML = data.recentSubscriptions.map(sub => `
+                                        <tr>
+                                            <td><strong>${sub.name}</strong><br><small>UID: ${sub.userId}</small></td>
+                                            <td>${sub.plan}</td>
+                                            <td>${sub.seat || 'N/A'}</td>
+                                            <td>${sub.amount}</td>
+                                            <td><span class="status-pill paid">${sub.status}</span></td>
+                                        </tr>
+                                    `).join('');
+                                }
+                            }
+
+                            // Update Live Operations Log Notifications
+                            const notiBoxBody = document.getElementById("noti-logs-container");
+                            if (notiBoxBody) {
+                                notiBoxBody.innerHTML = data.logs.map(log => `
+                                    <div class="noti-card alert-blue">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                        <div class="noti-msg-details">
+                                            <h6>Operation Event</h6>
+                                            <p>${log.text}</p>
+                                            <span style="font-size:10px; color:#94a3b8; display:block; margin-top:4px;">${new Date(log.timestamp).toLocaleString()}</span>
+                                        </div>
+                                    </div>
+                                `).join('');
+                            }
+                        }
+                    })
+                    .catch(err => console.error("Error loading admin overview:", err));
+            }
+
+            // 5. Fetch Students Directory and Bind Actions
+            function loadStudentsDirectory() {
+                fetch('http://localhost:3001/api/admin/users')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            studentsList = data.users;
+                            renderStudentsTable(studentsList);
+                        }
+                    })
+                    .catch(err => console.error("Error loading student list:", err));
+            }
+
+            function renderStudentsTable(users) {
+                const tableBody = document.getElementById("users-table-body");
+                if (!tableBody) return;
+
+                if (users.length === 0) {
+                    tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:#718096; padding: 20px 0;">No registered students found.</td></tr>`;
+                    return;
+                }
+
+                tableBody.innerHTML = users.map(u => {
+                    const expiryDate = new Date(u.expiresAt);
+                    const currentDate = new Date();
+                    const daysLeft = Math.max(0, Math.ceil((expiryDate - currentDate) / (1000 * 60 * 60 * 24)));
+                    
+                    let statusHtml = '';
+                    if (daysLeft > 0) {
+                        statusHtml = `<span style="color: #10b981; font-weight: 500;">Active (${daysLeft} Days left)</span>`;
+                    } else {
+                        statusHtml = `<span style="color: #ef4444; font-weight: 500;">Expired (Renew Profile)</span>`;
+                    }
+
+                    // Progress calculation
+                    const regDate = new Date(u.registeredAt);
+                    const totalTime = Math.max(1, expiryDate - regDate);
+                    const timePassed = Math.max(0, currentDate - regDate);
+                    const progress = Math.min(100, Math.round((timePassed / totalTime) * 100));
+                    const daysPassed = Math.round(timePassed / (1000 * 60 * 60 * 24));
+
+                    return `
+                        <tr data-uid="${u.userId}" 
+                            data-name="${u.name}" 
+                            data-phone="${u.phone}" 
+                            data-email="${u.email}" 
+                            data-address="${u.address}" 
+                            data-photo="${u.photo || 'placeholder_user.png'}" 
+                            data-idproof="${u.idProofType === 'aadhaar' ? 'Aadhar Card' : u.idProofType === 'pan' ? 'PAN Card' : u.idProofType === 'voter' ? 'Voter ID' : 'College ID'}" 
+                            data-seat="${u.selectedSeat || 'N/A'}" 
+                            data-slot="${u.slot || 'N/A'}" 
+                            data-plan="${u.plan === '1w' ? '1 Week Plan' : u.plan === '3m' ? '3 Months Plan' : u.plan === '6m' ? '6 Months Plan' : '1 Month Plan'}" 
+                            data-days-passed="${daysPassed}" 
+                            data-days-left="${daysLeft}" 
+                            data-progress="${progress}">
+                            <td>${u.userId}</td>
+                            <td>${u.name}</td>
+                            <td>${u.phone}</td>
+                            <td>${u.selectedSeat || 'N/A'}</td>
+                            <td>${statusHtml}</td>
+                            <td>
+                                <div class="user-action-btns-group">
+                                    <button class="action-btn-item view-user" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="action-btn-item edit-user" title="Edit User"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="action-btn-item message-user" title="Send Message" style="color: #8b5cf6;"><i class="fa-solid fa-paper-plane"></i></button>
+                                    <button class="action-btn-item delete-user" title="Delete User"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // 6. View/Edit Student Modal Command logic
+            const modal = document.getElementById('userPremiumModal');
+            const modalOverlay = document.getElementById('userModalOverlay');
+            const closeModelBtn = document.getElementById('closeUserModalBtn');
+            const cancelBtn = document.getElementById('modalCancelBtn');
+            const saveBtn = document.getElementById('modalSaveBtn');
+            const dossierForm = document.getElementById('studentDossierForm');
+
+            let currentTargetRow = null;
+
+            const populateAndOpenModal = (row, mode) => {
+                if (!modal || !modalOverlay) return;
+                currentTargetRow = row;
+
+                const uid = row.getAttribute('data-uid') || '#LIB-2026-XX';
+                const name = row.getAttribute('data-name') || 'N/A';
+                const phone = row.getAttribute('data-phone') || 'N/A';
+                const email = row.getAttribute('data-email') || '';
+                const address = row.getAttribute('data-address') || '';
+                const idproof = row.getAttribute('data-idproof') || '';
+                const seat = row.getAttribute('data-seat') || 'N/A';
+                const slot = row.getAttribute('data-slot') || '';
+                const plan = row.getAttribute('data-plan') || '';
+                const daysPassed = row.getAttribute('data-days-passed') || '0';
+                const daysLeft = row.getAttribute('data-days-left') || '0';
+                const progress = row.getAttribute('data-progress') || '0';
+                const photoSrc = row.getAttribute('data-photo') || 'placeholder_user.png';
+
+                // Map elements into modal preview card
+                if (document.getElementById('mNameHeading')) document.getElementById('mNameHeading').textContent = name;
+                if (document.getElementById('mUidTag')) document.getElementById('mUidTag').textContent = uid;
+                if (document.getElementById('mDaysPassed')) document.getElementById('mDaysPassed').textContent = `${daysPassed} Days Active`;
+                if (document.getElementById('mDaysLeft')) document.getElementById('mDaysLeft').textContent = `${daysLeft} Days Remaining`;
+                if (document.getElementById('mProgressBar')) document.getElementById('mProgressBar').style.width = `${progress}%`;
+                if (document.getElementById('mPhoto')) document.getElementById('mPhoto').src = photoSrc;
+
+                // Map elements into inputs safely
+                if (document.getElementById('fieldUid')) document.getElementById('fieldUid').value = uid;
+                if (document.getElementById('fieldName')) document.getElementById('fieldName').value = name;
+                if (document.getElementById('fieldPhone')) document.getElementById('fieldPhone').value = phone;
+                if (document.getElementById('fieldEmail')) document.getElementById('fieldEmail').value = email;
+                if (document.getElementById('fieldSeat')) document.getElementById('fieldSeat').value = seat;
+                if (document.getElementById('fieldSlot')) document.getElementById('fieldSlot').value = slot;
+                if (document.getElementById('fieldPlan')) document.getElementById('fieldPlan').value = plan;
+                if (document.getElementById('fieldIdProof')) document.getElementById('fieldIdProof').value = idproof;
+                if (document.getElementById('fieldAddress')) document.getElementById('fieldAddress').value = address;
+
+                // Handle system modes (View vs Edit)
+                if (mode === 'view') {
+                    if (document.getElementById('modalTitle')) document.getElementById('modalTitle').textContent = "Student Security Profile";
+                    if (document.getElementById('modalSubTitle')) document.getElementById('modalSubTitle').textContent = "Full read-only data access dossier";
+                    if (saveBtn) saveBtn.style.display = 'none';
+                    if (cancelBtn) cancelBtn.textContent = "Close Window";
+                    if (document.getElementById('photoUploadOverlay')) document.getElementById('photoUploadOverlay').style.display = 'none';
+                    setFormFieldsReadOnly(true);
+                } else if (mode === 'edit') {
+                    if (document.getElementById('modalTitle')) document.getElementById('modalTitle').textContent = "Modify Student Configuration";
+                    if (document.getElementById('modalSubTitle')) document.getElementById('modalSubTitle').textContent = "Perform instant database field overrides";
+                    if (saveBtn) saveBtn.style.display = 'inline-block';
+                    if (cancelBtn) cancelBtn.textContent = "Cancel Changes";
+                    if (document.getElementById('photoUploadOverlay')) document.getElementById('photoUploadOverlay').style.display = 'flex';
+                    setFormFieldsReadOnly(false);
+                }
+
+                modal.classList.add('active');
+                modalOverlay.classList.add('active');
+            };
+
+            const setFormFieldsReadOnly = (isReadOnly) => {
+                if (!dossierForm) return;
+                const inputs = dossierForm.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    if (input.id !== 'fieldUid') { 
+                        if (isReadOnly) {
+                            input.setAttribute('readonly', 'true');
+                        } else {
+                            input.removeAttribute('readonly');
+                        }
+                    }
+                });
+            };
+
+            const closeModalWindow = () => {
+                if (modal) modal.classList.remove('active');
+                if (modalOverlay) modalOverlay.classList.remove('active');
+                currentTargetRow = null;
+            };
+
+            if (closeModelBtn) closeModelBtn.addEventListener('click', closeModalWindow);
+            if (cancelBtn) cancelBtn.addEventListener('click', closeModalWindow);
+            if (modalOverlay) modalOverlay.addEventListener('click', closeModalWindow);
+
+            // Save Form Data Logic Handler (Edit Mode Submit)
+            if (dossierForm) {
+                dossierForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!currentTargetRow) return;
+
+                    const userId = document.getElementById('fieldUid').value;
+                    const name = document.getElementById('fieldName').value;
+                    const phone = document.getElementById('fieldPhone').value;
+                    const email = document.getElementById('fieldEmail').value;
+                    const selectedSeat = document.getElementById('fieldSeat').value;
+                    const slot = document.getElementById('fieldSlot').value;
+                    const address = document.getElementById('fieldAddress').value;
+                    
+                    const rawPlan = document.getElementById('fieldPlan').value.toLowerCase();
+                    let plan = '1m';
+                    if (rawPlan.includes('week') || rawPlan.includes('1w')) plan = '1w';
+                    else if (rawPlan.includes('3') || rawPlan.includes('3m')) plan = '3m';
+                    else if (rawPlan.includes('6') || rawPlan.includes('6m')) plan = '6m';
+
+                    const rawIdProof = document.getElementById('fieldIdProof').value.toLowerCase();
+                    let idProofType = 'aadhaar';
+                    if (rawIdProof.includes('pan')) idProofType = 'pan';
+                    else if (rawIdProof.includes('voter')) idProofType = 'voter';
+                    else if (rawIdProof.includes('college') || rawIdProof.includes('student')) idProofType = 'college';
+
+                    saveBtn.disabled = true;
+                    saveBtn.textContent = "Saving...";
+
+                    fetch('http://localhost:3001/api/admin/users/update', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId, name, phone, email, selectedSeat, slot, plan, idProofType, address })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        saveBtn.disabled = false;
+                        saveBtn.textContent = "Save Updates";
+
+                        if (data.success) {
+                            alert("✨ Student configuration saved to database successfully!");
+                            closeModalWindow();
+                            loadDashboardStats();
+                            loadStudentsDirectory();
+                        } else {
+                            alert("Failed to update user: " + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        saveBtn.disabled = false;
+                        saveBtn.textContent = "Save Updates";
+                        console.error(err);
+                        alert("Error saving updates to server.");
+                    });
+                });
+            }
+
+            // Hook Directory Row Action Buttons
+            const tableBody = document.getElementById('users-table-body');
+            if (tableBody) {
+                tableBody.addEventListener('click', (e) => {
+                    const targetBtn = e.target.closest('.action-btn-item');
+                    if (!targetBtn) return;
+
+                    const row = targetBtn.closest('tr');
+                    if (!row) return;
+
+                    if (targetBtn.classList.contains('view-user')) {
+                        populateAndOpenModal(row, 'view');
+                    } else if (targetBtn.classList.contains('edit-user')) {
+                        populateAndOpenModal(row, 'edit');
+                    } else if (targetBtn.classList.contains('delete-user')) {
+                        const studentName = row.getAttribute('data-name') || 'this student';
+                        const uid = row.getAttribute('data-uid');
+                        
+                        if (confirm(`⚠️ Security Alert: Are you absolutely sure you want to permanently remove ${studentName} from Smart Library directory?`)) {
+                            fetch(`/api/admin/users/${uid}`, {
+                                method: 'DELETE'
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.success) {
+                                    row.style.opacity = '0';
+                                    setTimeout(() => {
+                                        row.remove();
+                                        loadDashboardStats();
+                                        alert("Database Updated: Profile purged successfully.");
+                                    }, 300);
+                                } else {
+                                    alert("Error deleting user: " + data.message);
+                                }
+                            })
+                            .catch(err => {
+                                console.error(err);
+                                 alert("Failed to delete user from server.");
+                            });
+                        }
+                    } else if (targetBtn.classList.contains('message-user')) {
+                        const studentName = row.getAttribute('data-name') || 'this student';
+                        const uid = row.getAttribute('data-uid');
+                        
+                        const msgText = prompt(`Send notification message to ${studentName} (${uid}):`);
+                        if (!msgText || !msgText.trim()) return;
+
+                        fetch('http://localhost:3001/api/admin/users/message', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ userId: uid, text: msgText.trim() })
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            alert(data.message);
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            alert("Failed to send message.");
+                        });
+                    }
+                });
+            }
+
+            // 7. Load Books Inventory & Filter Search Logic
+            function loadBooksInventory() {
+                fetch('http://localhost:3001/api/books')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            booksList = data.books;
+                            renderBooksGrid(booksList);
+                        }
+                    })
+                    .catch(err => console.error("Error loading books:", err));
+            }
+
+            function renderBooksGrid(books) {
+                const booksGrid = document.getElementById("books-grid-container");
+                if (!booksGrid) return;
+
+                if (books.length === 0) {
+                    booksGrid.innerHTML = `<div style="grid-column:span 2; text-align:center; color:#718096; padding: 20px 0;">No matching books in stock.</div>`;
+                    return;
+                }
+
+                booksGrid.innerHTML = books.map(book => {
+                    const inStockPill = book.currentStock > 0 
+                        ? `<span style="color:#10b981; font-weight:500;">In Stock: ${book.currentStock} Units</span>` 
+                        : `<span style="color:#ef4444; font-weight:500;">Issued (0 Units Left)</span>`;
+                    
+                    const coverStyle = book.coverImage 
+                        ? `background-image: url('${book.coverImage}'); background-size: cover; background-position: center;`
+                        : `background: ${book.coverGradient || 'linear-gradient(135deg, #1e293b, #0f172a)'};`;
+                    const innerIcon = book.coverImage ? '' : `<i class="fa-solid fa-book-bookmark" style="color: #60a5fa; font-size: 32px;"></i>`;
+
+                    return `
+                        <div class="grid-book-card" data-category="${book.category}" data-name="${book.title.toLowerCase()}" style="position: relative;">
+                            <div class="book-action-overlay" style="position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; z-index: 10;">
+                                <button class="edit-book-btn" data-book-id="${book.bookId}" title="Edit Book" style="background: rgba(16, 185, 129, 0.95); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"><i class="fa-solid fa-pen" style="font-size: 11px;"></i></button>
+                                <button class="delete-book-btn" data-book-id="${book.bookId}" title="Delete Book" style="background: rgba(239, 68, 68, 0.95); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"><i class="fa-solid fa-trash-can" style="font-size: 11px;"></i></button>
+                            </div>
+                            <div class="book-placeholder-bg" style="${coverStyle} border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                                ${innerIcon}
+                            </div>
+                            <h4 style="margin-top: 10px; font-size: 14px; font-weight:700;">${book.title}</h4>
+                            <span class="grid-book-number" style="display:block; margin: 4px 0;">Book Code: #${book.bookId}</span>
+                            <div style="font-size:12px; margin-top:5px;">${inStockPill}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Book category filter and search
+            const bookSearchInput = document.getElementById("global-book-search");
+            const bookCategoryBtns = document.querySelectorAll(".books-category-tabs .category-tab-btn");
+            let currentBookCategory = "all";
+            let bookSearchQuery = "";
+
+            function filterBooksList() {
+                const filtered = booksList.filter(book => {
+                    const matchesCategory = (currentBookCategory === "all" || book.category === currentBookCategory);
+                    const matchesSearch = book.title.toLowerCase().includes(bookSearchQuery);
+                    return matchesCategory && matchesSearch;
+                });
+                renderBooksGrid(filtered);
+            }
+
+            if (bookCategoryBtns) {
+                bookCategoryBtns.forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        bookCategoryBtns.forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        currentBookCategory = btn.getAttribute("data-category") || "all";
+                        filterBooksList();
+                    });
+                });
+            }
+
+            if (bookSearchInput) {
+                bookSearchInput.addEventListener("input", (e) => {
+                    bookSearchQuery = e.target.value.toLowerCase();
+                    filterBooksList();
+                });
+            }
+
+            // Student directory search filter
+            const studentSearchInput = document.getElementById("user-panel-search");
+            if (studentSearchInput) {
+                studentSearchInput.addEventListener("input", (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const filtered = studentsList.filter(u => 
+                        u.name.toLowerCase().includes(query) || 
+                        u.userId.toLowerCase().includes(query) || 
+                        u.phone.includes(query)
+                    );
+                    renderStudentsTable(filtered);
+                });
+            }
+
+            // 8. Quick Counter Issue / Return Drawer Submit Form handler
+            const drawerForm = document.querySelector(".assign-drawer-panel .sub-view-form");
+            if (drawerForm) {
+                const confirmBtn = drawerForm.querySelector(".save-preference-btn");
+                confirmBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const userIdInput = drawerForm.querySelectorAll("input")[0];
+                    const bookCodeInput = drawerForm.querySelectorAll("input")[1];
+                    const actionSelect = drawerForm.querySelector("select");
+
+                    const userId = userIdInput ? userIdInput.value.trim() : "";
+                    const bookCode = bookCodeInput ? bookCodeInput.value.trim().replace("#", "") : "";
+                    const actionType = actionSelect ? actionSelect.value : "assign";
+
+                    if (!userId || !bookCode) {
+                        alert("Please enter Student UID and Book Code.");
+                        return;
+                    }
+
+                    confirmBtn.disabled = true;
+                    confirmBtn.textContent = "Processing...";
+
+                    fetch('http://localhost:3001/api/admin/books/action', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId, bookCode, actionType })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        confirmBtn.disabled = false;
+                        confirmBtn.textContent = "Confirm Transaction";
+                        alert(data.message);
+                        if (data.success) {
+                            if (userIdInput) userIdInput.value = "";
+                            if (bookCodeInput) bookCodeInput.value = "";
+                            closeAssignDrawer();
+                            loadDashboardStats();
+                            loadStudentsDirectory();
+                            loadBooksInventory();
+                        }
+                    })
+                    .catch(err => {
+                        confirmBtn.disabled = false;
+                        confirmBtn.textContent = "Confirm Transaction";
+                        console.error(err);
+                        alert("Failed to submit book transaction.");
+                    });
+                });
+            }
+
+
+
+            // Broadcast message to all students
+            const broadcastBtn = document.getElementById("broadcast-trigger");
+            if (broadcastBtn) {
+                broadcastBtn.addEventListener("click", () => {
+                    const msgText = prompt("Enter notification message to Broadcast to All registered students:");
+                    if (!msgText || !msgText.trim()) return;
+
+                    fetch('http://localhost:3001/api/admin/users/broadcast', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text: msgText.trim() })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        alert(data.message);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Failed to send broadcast notice.");
+                    });
+                });
+            }
+                            
+            // Bind click handler for books grid actions (Delete / Edit) - Combined & Cleaned
+            const booksGridContainer = document.getElementById("books-grid-container");
+            if (booksGridContainer) {
+                booksGridContainer.addEventListener("click", (e) => {
+                    const editBtn = e.target.closest(".edit-book-btn");
+                    const delBtn = e.target.closest(".delete-book-btn");
+
+                        // ---- EDIT ACTION ----
+                        if (editBtn) {
+                            const bookId = editBtn.getAttribute("data-book-id");
+                            const book = booksList.find(b => b.bookId === bookId);
+                            if (book) {
+                                openAddBookDrawer('edit', book);
+                            }
+                        }
+
+                        
+                        if (delBtn) {
+                            const bookId = delBtn.getAttribute("data-book-id");
+                            const qtyStr = prompt(`Enter quantity of copies to delete for Book #${bookId}:\n(Leave empty or enter 0 to delete the book completely)`);
+                            if (qtyStr === null) return; // cancelled
+
+                            const qty = parseInt(qtyStr.trim()) || 0;
+                            const confirmMsg = qty > 0
+                                ? `Are you sure you want to delete ${qty} copies of Book #${bookId}?`
+                                : `Are you absolutely sure you want to permanently delete Book #${bookId} from storage database?`;
+
+                        if (confirm(confirmMsg)) {
+                            fetch(`/api/admin/books/${bookId}?qty=${qty}`, {
+                                method: 'DELETE'
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    alert(data.message);
+                                    if (data.success) {
+                                        loadBooksInventory();
+                                        if (typeof loadDashboardStats === "function") loadDashboardStats();
+                                    }
+                                })
+                                .catch(err => {
+                                    console.error("Error deleting book:", err);
+                                    alert("Failed to delete book.");
+                                });
+                        }
+                    }
+                });
+            }
+
+            // Add Book Drawer toggles & form submission
+            const addBookPanel = document.getElementById("add-book-panel");
+            const closeAddBookPanelX = document.getElementById("close-add-book-panel-btn-x");
+            const overlay = document.querySelector(".profile-drawer-overlay") || document.getElementById("drawer-overlay");
+
+            let bookEditMode = false;
+            let editingBookId = null;
+
+            const openAddBookDrawer = (mode = 'add', book = null) => {
+                if (!addBookPanel) return;
+
+                const headerTitle = addBookPanel.querySelector(".assign-panel-header h2");
+                const headerDesc = addBookPanel.querySelector(".assign-panel-header p");
+                const confirmBtn = document.getElementById("confirm-add-book-btn");
+
+                const titleInput = document.getElementById("add-book-title");
+                const idInput = document.getElementById("add-book-id");
+                const categorySelect = document.getElementById("add-book-category");
+                const stockInput = document.getElementById("add-book-stock");
+                const coverInput = document.getElementById("add-book-cover");
+                const gradientInput = document.getElementById("add-book-gradient");
+                const isbnInput = document.getElementById("add-book-isbn");
+
+                if (mode === 'edit' && book) {
+                    bookEditMode = true;
+                    editingBookId = book.bookId;
+
+                    if (headerTitle) headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square"></i> Edit Book Details`;
+                    if (headerDesc) headerDesc.textContent = "Update book details & cover in database";
+                    if (confirmBtn) confirmBtn.textContent = "Save Changes";
+
+                    if (titleInput) titleInput.value = book.title;
+                    if (idInput) {
+                        idInput.value = book.bookId;
+                        idInput.setAttribute("readonly", "true");
+                    }
+                    if (categorySelect) categorySelect.value = book.category;
+                    if (stockInput) stockInput.value = book.totalStock;
+                    if (coverInput) coverInput.value = book.coverImage || "";
+                    if (gradientInput) gradientInput.value = book.coverGradient || "";
+                    if (isbnInput) isbnInput.value = book.isbn || "";
+                } else {
+                    bookEditMode = false;
+                    editingBookId = null;
+
+                    if (headerTitle) headerTitle.innerHTML = `<i class="fa-solid fa-book"></i> Add New Book`;
+                    if (headerDesc) headerDesc.textContent = "Insert new book details & cover to database";
+                    if (confirmBtn) confirmBtn.textContent = "Add Book to Inventory";
+
+                    if (titleInput) titleInput.value = "";
+                    if (idInput) {
+                        idInput.value = "";
+                        idInput.removeAttribute("readonly");
+                    }
+                    if (categorySelect) categorySelect.value = "computer";
+                    if (stockInput) stockInput.value = "1";
+                    if (coverInput) coverInput.value = "";
+                    if (gradientInput) gradientInput.value = "linear-gradient(135deg, #3b82f6, #8b5cf6)";
+                    if (isbnInput) isbnInput.value = "";
+                }
+
+                addBookPanel.classList.add("open");
+                if (overlay) overlay.classList.add("active");
+            };
+
+            const closeAddBookDrawer = () => {
+                if (addBookPanel) {
+                    addBookPanel.classList.remove("open");
+                    if (overlay && (!assignPanel || !assignPanel.classList.contains("open"))) {
+                        overlay.classList.remove("active");
+                    }
+                }
+            };
+
+            const addBookBtn = document.getElementById("add-book-trigger");
+            if (addBookBtn) {
+                addBookBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    openAddBookDrawer('add');
+                });
+            }
+            if (closeAddBookPanelX) {
+                closeAddBookPanelX.addEventListener("click", closeAddBookDrawer);
+            }
+
+            // Bind click handler for books grid actions (Delete / Edit)
+            // const booksGridContainer = document.getElementById("books-grid-container");
+            // if (booksGridContainer) {
+            //     booksGridContainer.addEventListener("click", (e) => {
+            //         const editBtn = e.target.closest(".edit-book-btn");
+            //         const delBtn = e.target.closest(".delete-book-btn");
+
+            //         if (editBtn) {
+            //             const bookId = editBtn.getAttribute("data-book-id");
+            //             const book = booksList.find(b => b.bookId === bookId);
+            //             if (book) {
+            //                 openAddBookDrawer('edit', book);
+            //             }
+            //         }
+
+            //         if (delBtn) {
+            //             const bookId = delBtn.getAttribute("data-book-id");
+            //             const qtyStr = prompt(`Enter quantity of copies to delete for Book #${bookId}:\n(Leave empty or enter 0 to delete the book completely)`);
+            //             if (qtyStr === null) return; // cancelled
+
+            //             const qty = parseInt(qtyStr.trim()) || 0;
+            //             const confirmMsg = qty > 0 
+            //                 ? `Are you sure you want to delete ${qty} copies of Book #${bookId}?`
+            //                 : `Are you absolutely sure you want to permanently delete Book #${bookId} from storage database?`;
+
+            //             if (confirm(confirmMsg)) {
+            //                 fetch(`/api/admin/books/${bookId}?qty=${qty}`, {
+            //                     method: 'DELETE'
+            //                 })
+            //                 .then(res => res.json())
+            //                 .then(data => {
+            //                     alert(data.message);
+            //                     if (data.success) {
+            //                         loadBooksInventory();
+            //                         loadDashboardStats();
+            //                     }
+            //                 })
+            //                 .catch(err => {
+            //                     console.error(err);
+            //                     alert("Failed to delete book.");
+            //                 });
+            //             }
+            //         }
+            //     });
+            // }
+
+            // Submit add/edit book form
+            const confirmAddBookBtn = document.getElementById("confirm-add-book-btn");
+            if (confirmAddBookBtn) {
+                confirmAddBookBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    const titleInput = document.getElementById("add-book-title");
+                    const idInput = document.getElementById("add-book-id");
+                    const categorySelect = document.getElementById("add-book-category");
+                    const stockInput = document.getElementById("add-book-stock");
+                    const coverInput = document.getElementById("add-book-cover");
+                    const gradientInput = document.getElementById("add-book-gradient");
+                    const isbnInput = document.getElementById("add-book-isbn");
+
+                    const title = titleInput ? titleInput.value.trim() : "";
+                    const bookId = idInput ? idInput.value.trim() : "";
+                    const category = categorySelect ? categorySelect.value : "computer";
+                    const totalStock = stockInput ? parseInt(stockInput.value) || 1 : 1;
+                    const coverImage = coverInput ? coverInput.value.trim() : "";
+                    const coverGradient = gradientInput ? gradientInput.value.trim() : "";
+                    const isbn = isbnInput ? isbnInput.value.trim() : "";
+
+                    if (!title || !bookId) {
+                        alert("Please fill in Book Title and Book ID Code.");
+                        return;
+                    }
+
+                    confirmAddBookBtn.disabled = true;
+                    confirmAddBookBtn.textContent = bookEditMode ? "Saving Updates..." : "Fetching cover & saving...";
+
+                    const endpoint = bookEditMode ? '/api/admin/books/update' : '/api/admin/books';
+                    const payload = { 
+                        title, 
+                        bookId, 
+                        category, 
+                        totalStock, 
+                        isbn: isbn || null,
+                        coverImage: coverImage || null,
+                        coverGradient: coverGradient || null
+                    };
+
+                    fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        confirmAddBookBtn.disabled = false;
+                        confirmAddBookBtn.textContent = "Add Book to Inventory";
+                        if (data.success) {
+                            const coverNote = data.coverAutoFetched ? " A cover image was auto-fetched." : "";
+                            alert(bookEditMode ? "✨ Book details updated successfully in database!" : `✨ Book '${data.book.title}' added to storage database successfully!${coverNote}`);
+                            if (titleInput) titleInput.value = "";
+                            if (idInput) idInput.value = "";
+                            if (stockInput) stockInput.value = "1";
+                            if (coverInput) coverInput.value = "";
+                            if (isbnInput) isbnInput.value = "";
+                            closeAddBookDrawer();
+                            loadBooksInventory();
+                        } else {
+                            alert("Action failed: " + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        confirmAddBookBtn.disabled = false;
+                        confirmAddBookBtn.textContent = "Add Book to Inventory";
+                        console.error(err);
+                        alert("Error saving book details to database.");
+                    });
+                });
+            }
+
+            // Dynamic plan pricing loading & updates
+            function loadPlanPrices() {
+                fetch('http://localhost:3001/api/plans/prices')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success && data.prices) {
+                            renderPlanPrices(data.prices);
+                        }
+                    })
+                    .catch(err => console.error("Error loading pricing matrix:", err));
+            }
+
+            function renderPlanPrices(prices) {
+                const pricingCards = document.querySelectorAll(".pricing-slide-card");
+                pricingCards.forEach(card => {
+                    const h4 = card.querySelector("h4");
+                    if (!h4) return;
+                    const hoursStr = h4.textContent.trim().split(" ")[0]; // e.g. "6", "12", "18", "24"
+                    const rows = card.querySelectorAll(".price-row-item");
+                    rows.forEach(row => {
+                        const lbl = row.querySelector(".duration-lbl").textContent.trim().toLowerCase();
+                        let planCode = "1m";
+                        if (lbl.includes("week")) planCode = "1w";
+                        else if (lbl.includes("3 month")) planCode = "3m";
+                        else if (lbl.includes("6 month")) planCode = "6m";
+                        else planCode = "1m";
+
+                        const valSpan = row.querySelector(".price-val");
+                        if (valSpan && prices[hoursStr] && prices[hoursStr][planCode] !== undefined) {
+                            valSpan.textContent = "₹" + parseFloat(prices[hoursStr][planCode]).toLocaleString('en-IN');
+                        }
+                    });
+                });
+            }
+
+            const bindPlanEditEvents = () => {
+                const pricingGrid = document.querySelector(".library-pricing-grid");
+                if (pricingGrid) {
+                    pricingGrid.addEventListener("click", (e) => {
+                        const editBtn = e.target.closest(".Edit-btn");
+                        if (!editBtn) return;
+                        
+                        const row = editBtn.closest(".price-row-item");
+                        const card = editBtn.closest(".pricing-slide-card");
+                        const h4 = card.querySelector("h4");
+                        const hoursStr = h4.textContent.trim().split(" ")[0]; // e.g., "6"
+                        const lbl = row.querySelector(".duration-lbl").textContent.trim().toLowerCase();
+                        
+                        let planCode = "1m";
+                        if (lbl.includes("week")) planCode = "1w";
+                        else if (lbl.includes("3 month")) planCode = "3m";
+                        else if (lbl.includes("6 month")) planCode = "6m";
+                        else planCode = "1m";
+
+                        const currentPriceText = row.querySelector(".price-val").textContent.replace("₹", "").replace(/,/g, "").trim();
+                        
+                        const newPriceStr = prompt(`Enter new price for ${hoursStr} Hours - ${lbl} plan:`, currentPriceText);
+                        if (newPriceStr === null) return; // cancelled
+                        
+                        const newPrice = parseFloat(newPriceStr.trim());
+                        if (isNaN(newPrice) || newPrice < 0) {
+                            alert("Please enter a valid price number.");
+                            return;
+                        }
+
+                        fetch('http://localhost:3001/api/plans/update-price', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ duration: hoursStr, plan: planCode, price: newPrice })
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert("✨ Plan price updated successfully in database.");
+                                loadPlanPrices();
+                            } else {
+                                alert("Failed to update price: " + data.message);
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            alert("Error updating plan price.");
+                        });
+                    });
+                }
+            };
+
+
+            // Hook "Refresh Covers" click handler — backfills cover images
+            // for any existing books that don't have one yet.
+            const refreshCoversBtn = document.getElementById("refresh-covers-btn");
+            if (refreshCoversBtn) {
+                refreshCoversBtn.addEventListener("click", () => {
+                    refreshCoversBtn.disabled = true;
+                    const originalHtml = refreshCoversBtn.innerHTML;
+                    refreshCoversBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Fetching covers...`;
+
+                    fetch('http://localhost:3001/api/admin/books/backfill-covers', { method: 'POST' })
+                        .then(res => res.json())
+                        .then(data => {
+                            refreshCoversBtn.disabled = false;
+                            refreshCoversBtn.innerHTML = originalHtml;
+                            alert(data.message || "Cover refresh complete.");
+                            if (data.success) loadBooksInventory();
+                        })
+                        .catch(err => {
+                            refreshCoversBtn.disabled = false;
+                            refreshCoversBtn.innerHTML = originalHtml;
+                            alert("Error refreshing covers.");
+                        });
+                });
+            }
+
+            // Hook Broadcast message sending from notification dropdown
+            const broadcastBtnDropdown = document.getElementById("broadcastBtn");
+            if (broadcastBtnDropdown) {
+                broadcastBtnDropdown.addEventListener("click", () => {
+                    const input = document.getElementById("broadcastInput");
+                    const text = input ? input.value.trim() : "";
+                    if (!text) {
+                        alert("Please enter a notification message to broadcast.");
+                        return;
+                    }
+
+                    broadcastBtnDropdown.disabled = true;
+                    fetch('http://localhost:3001/api/admin/users/broadcast', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        broadcastBtnDropdown.disabled = false;
+                        alert(data.message);
+                        if (data.success) {
+                            if (input) input.value = "";
+                            loadDashboardStats();
+                        }
+                    })
+                    .catch(err => {
+                        broadcastBtnDropdown.disabled = false;
+                        console.error(err);
+                        alert("Error sending broadcast notification.");
+                    });
+                });
+            }
+
+            // Logout Dashboard Click handler
+            const logoutBtns = document.querySelectorAll(".drawer-logout-action");
+            logoutBtns.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm("Close admin dashboard session?")) {
+                        sessionStorage.clear();
+                        window.location.href = "login.html";
+                    }
+                });
+            });
+
+            // Initial load
+            loadDashboardStats();
+            loadStudentsDirectory();
+            loadBooksInventory();
+            loadPlanPrices();
+            bindPlanEditEvents();
+        });
+    </script>
+</body>
+</html>

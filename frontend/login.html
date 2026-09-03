@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Portal - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page-body">
+
+    <div class="login-container">
+        <div class="login-sidebar">
+            <div class="sidebar-content">
+                <div class="logo">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <span>Smart Library</span>
+                </div>
+                <h2>Welcome Back!</h2>
+                <p>Login to access your workspace, book your premium seats, and explore your plan updates seamlessly.</p>
+            </div>
+            <div class="sidebar-footer">
+                <p>© 2026 Smart Library Portal. All rights reserved.</p>
+            </div>
+        </div>
+
+        <div class="login-form-section">
+            <div class="form-box">
+                <div class="login-tabs" id="loginTabs">
+                    <button type="button" class="login-tab-btn active" id="tab-user">User Login</button>
+                    <button type="button" class="login-tab-btn" id="tab-admin">Admin Login</button>
+                    <span class="login-tab-slider" id="tabSlider"></span>
+                </div>
+
+                <div class="form-animated-panel" id="formAnimatedPanel">
+                    <div class="form-header">
+                        <h2>User Login</h2>
+                        <p>Please enter your registration details to continue</p>
+                    </div>
+
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="studentName">Full Name</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="studentName" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="userId">User ID </label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input type="text" id="userId" placeholder="Enter your unique User ID" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember Me</span>
+                            </label>
+                            <a href="#" class="forgot-id">Forgot ID?</a>
+                        </div>
+
+                        <button type="submit" class="btn-login">
+                            Sign In <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <p>New to our library? <a href="registration.html">Register Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot ID Modal (email-based recovery) -->
+    <div class="forgot-id-modal-overlay" id="forgotIdOverlay">
+        <div class="forgot-id-modal">
+            <button type="button" class="forgot-id-close" id="forgotIdClose" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="forgot-id-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <h3>Forgot your User ID?</h3>
+            <p>Enter your registered email address and we'll securely send your User ID to it.</p>
+            <div class="input-wrapper" style="margin-top: 16px;">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" id="forgotIdEmail" placeholder="you@example.com" required>
+            </div>
+            <button type="button" class="btn-login" id="forgotIdSubmit" style="margin-top: 18px;">
+                Send My User ID <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="forgot-id-status" id="forgotIdStatus"></p>
+        </div>
+    </div>
+
+    <script>
+        const tabUser = document.getElementById("tab-user");
+        const tabAdmin = document.getElementById("tab-admin");
+        const tabSlider = document.getElementById("tabSlider");
+        const animPanel = document.getElementById("formAnimatedPanel");
+        const formHeaderTitle = document.querySelector(".form-header h2");
+        const formHeaderDesc = document.querySelector(".form-header p");
+        const formActions = document.querySelector(".form-actions");
+        const formFooter = document.querySelector(".form-footer");
+        const nameLabel = document.querySelector("label[for='studentName']");
+        const idLabel = document.querySelector("label[for='userId']");
+        const nameInput = document.getElementById("studentName");
+        const idInput = document.getElementById("userId");
+
+        let loginRole = "user";
+
+        function positionSlider(target) {
+            tabSlider.style.width = target.offsetWidth + "px";
+            tabSlider.style.transform = `translateX(${target.offsetLeft}px)`;
+        }
+        // Position slider under the initially active tab once layout is ready.
+        window.addEventListener("load", () => positionSlider(tabUser));
+
+        function switchToRole(role) {
+            if (role === loginRole) return;
+            loginRole = role;
+
+            const isUser = role === "user";
+            positionSlider(isUser ? tabUser : tabAdmin);
+            tabUser.classList.toggle("active", isUser);
+            tabAdmin.classList.toggle("active", !isUser);
+
+            // Fade + slight slide the form content out, swap its text, then back in.
+            animPanel.classList.add("form-panel-leaving");
+            setTimeout(() => {
+                formHeaderTitle.textContent = isUser ? "User Login" : "Admin Login";
+                formHeaderDesc.textContent = isUser
+                    ? "Please enter your registration details to continue"
+                    : "Please enter your administrative credentials";
+                formActions.style.display = isUser ? "flex" : "none";
+                formFooter.style.display = isUser ? "block" : "none";
+                nameLabel.textContent = isUser ? "Full Name" : "Admin Name";
+                idLabel.textContent = isUser ? "User ID" : "Admin ID";
+                nameInput.placeholder = isUser ? "Enter your full name" : "Enter predefined admin name";
+                idInput.placeholder = isUser ? "Enter your unique User ID" : "Enter admin security ID";
+                nameInput.value = "";
+                idInput.value = "";
+
+                animPanel.classList.remove("form-panel-leaving");
+                animPanel.classList.add("form-panel-entering");
+                requestAnimationFrame(() => {
+                    animPanel.classList.remove("form-panel-entering");
+                });
+            }, 180);
+        }
+
+        tabUser.addEventListener("click", () => switchToRole("user"));
+        tabAdmin.addEventListener("click", () => switchToRole("admin"));
+
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("studentName").value.trim();
+            const id = document.getElementById("userId").value.trim();
+            const btn = document.querySelector(".btn-login");
+            const originalText = btn.innerHTML;
+
+            if (loginRole === "user") {
+                const rememberMe = document.getElementById("rememberMe");
+                if (!rememberMe.checked) {
+                    alert("You must check the 'Remember Me' checkbox before logging in.");
+                    return;
+                }
+            }
+
+            if (name && id) {
+                btn.disabled = true;
+                btn.innerHTML = `Signing In... <i class="fa-solid fa-spinner fa-spin"></i>`;
+
+                fetch('http://localhost:3001/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, userId: id })
+                })
+                .then(res => {
+                    if (!res.ok) {
+                        return res.json().then(data => { throw new Error(data.message || 'Login failed') });
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+
+                    if (data.success) {
+                        sessionStorage.setItem("studentName", data.name);
+                        sessionStorage.setItem("userId", data.userId);
+                        sessionStorage.setItem("role", data.role);
+                        sessionStorage.setItem("is_navigating", "true");
+
+                        if (data.role === 'admin') {
+                            window.location.href = "admin-dashbord.html";
+                        } else {
+                            window.location.href = "user-dashbord.html";
+                        }
+                    }
+                })
+                .catch(err => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                    alert("Error: " + err.message);
+                });
+            }
+        });
+
+        // Handle Forgot User ID click -> opens the email-based recovery modal
+        const forgotLink = document.querySelector(".forgot-id");
+        const forgotOverlay = document.getElementById("forgotIdOverlay");
+        const forgotClose = document.getElementById("forgotIdClose");
+        const forgotEmailInput = document.getElementById("forgotIdEmail");
+        const forgotSubmitBtn = document.getElementById("forgotIdSubmit");
+        const forgotStatus = document.getElementById("forgotIdStatus");
+
+        if (forgotLink) {
+            forgotLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                forgotStatus.textContent = "";
+                forgotStatus.className = "forgot-id-status";
+                forgotEmailInput.value = "";
+                forgotOverlay.classList.add("open");
+                setTimeout(() => forgotEmailInput.focus(), 200);
+            });
+        }
+
+        function closeForgotModal() {
+            forgotOverlay.classList.remove("open");
+        }
+        forgotClose.addEventListener("click", closeForgotModal);
+        forgotOverlay.addEventListener("click", (e) => {
+            if (e.target === forgotOverlay) closeForgotModal();
+        });
+
+        forgotSubmitBtn.addEventListener("click", function () {
+            const email = forgotEmailInput.value.trim();
+            if (!email || !email.includes("@")) {
+                forgotStatus.textContent = "Please enter a valid email address.";
+                forgotStatus.className = "forgot-id-status error";
+                return;
+            }
+
+            const originalText = forgotSubmitBtn.innerHTML;
+            forgotSubmitBtn.disabled = true;
+            forgotSubmitBtn.innerHTML = `Sending... <i class="fa-solid fa-spinner fa-spin"></i>`;
+            forgotStatus.textContent = "";
+
+            fetch('http://localhost:3001/api/forgot-id', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    forgotSubmitBtn.disabled = false;
+                    forgotSubmitBtn.innerHTML = originalText;
+                    forgotStatus.textContent = data.message || "If that email is registered, your User ID has been sent to it.";
+                    forgotStatus.className = "forgot-id-status success";
+                    setTimeout(closeForgotModal, 2600);
+                })
+                .catch(err => {
+                    forgotSubmitBtn.disabled = false;
+                    forgotSubmitBtn.innerHTML = originalText;
+                    forgotStatus.textContent = "Something went wrong. Please try again.";
+                    forgotStatus.className = "forgot-id-status error";
+                });
+        });
+    </script>
+</body>
+</html>

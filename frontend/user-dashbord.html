@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Library - Premium Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1b99efeae.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <header class="header-section-dashbord">
+        <div class="logo-section">
+            <img src="logo.png" alt="Library Logo" class="logo-img">
+            <span>Smart Library</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-item active" data-target="home-section">
+                <i class="fa-solid fa-house"></i> HOME
+            </a>
+            <a href="#" class="nav-item" data-target="books-section">
+                <i class="fa-solid fa-book"></i> BOOKS
+            </a>
+            <a href="#" class="nav-item" data-target="plans-section">
+                <i class="fa-solid fa-layer-group"></i> PLANS
+            </a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="nav-icon-btn" id="notification-trigger" title="View Alerts">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+            <div class="user-profile-widget" id="profile-widget-trigger">
+                <img src="VIKASH.jpeg" alt="Vikash" class="user-avatar">
+                <div class="user-meta-info">
+                    <span class="user-name">Vikash kumawat</span>
+                    <span class="user-role">Student</span>
+                </div>
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content-window">
+
+        <section id="home-section" class="dashboard-viewport-section active">
+            <div class="luxury-dashboard-wrapper">
+
+                <div class="premium-hero-card">
+                    <div class="hero-left-content">
+                        <h1>Welcome back, Vikash Kumawat!</h1>
+                        <p>Your workspace is fully synchronized. Explore your current library assets and manage active
+                            slots below.</p>
+                    </div>
+                    <div class="hero-right-badge">
+                        <span class="luxury-pulse-tag"><span class="pulse-core"></span> Desk Verified</span>
+                    </div>
+                </div>
+
+                <div class="luxury-stats-grid">
+                    <div class="glass-stat-card">
+                        <div class="card-icon-wrapper ice-blue">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div class="card-info-block">
+                            <span class="metric-number">04</span>
+                            <span class="metric-label">Total Assigned Books</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-stat-card">
+                        <div class="card-icon-wrapper Amber-gold">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <div class="card-info-block specs-list">
+                            <h3>Active Reservation</h3>
+                            <p><i class="fa-solid fa-border-all"></i> <strong>Seat:</strong> No. 45</p>
+                            <p><i class="fa-regular fa-clock"></i> <strong>Slot:</strong> 6:00 PM - 12:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="luxury-progress-panel">
+                    <div class="progress-panel-meta">
+                        <h3>Membership Timeline</h3>
+                        <span class="days-remaining-pill">12 Days Remaining</span>
+                    </div>
+                    <div class="premium-bar-container">
+                        <div class="premium-bar-fill" style="width: 40%;">
+                            <span class="fill-label-text">40%</span>
+                        </div>
+                        <span class="bar-marker target-60">60%</span>
+                        <span class="bar-marker target-80">80%</span>
+                        <span class="bar-marker target-100">100%</span>
+                    </div>
+                </div> -->
+                <div class="membership-card">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <span class="icon">⏳</span>
+                            <h3>Membership Timeline</h3>
+                        </div>
+                        <span class="days-badge">12 Days Remaining</span>
+                    </div>
+
+                    <div class="timeline-container">
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 60%;">
+                                <span class="progress-tooltip">60% Over</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="start-date">Started: 18 Days Ago</span>
+                        <span class="end-date">Total Plan: 30 Days</span>
+                    </div>
+                </div>
+
+                <div class="luxury-shelf-panel">
+                    <h3>Issued Books & Tracking</h3>
+                    <div class="shelf-books-row">
+                        <div style="width: 100%; text-align: center; color: #718096; padding: 20px 0;">
+                            <i class="fa-solid fa-spinner fa-spin" style="font-size: 24px;"></i> Loading issued books...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="books-section" class="dashboard-viewport-section">
+            <div class="books-page-container">
+
+                <div class="books-search-bar-wrapper">
+                    <div class="search-input-box">
+                        <input type="text" id="global-book-search" placeholder="Search by book name...">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                    <button class="book-assign-action-btn" id="open-assign-panel-btn" title="Assign / Return Book">
+                        <i class="fa-solid fa-book-medical"></i>
+                    </button>
+                </div>
+
+                <div class="books-category-tabs">
+                    <button class="category-tab-btn active" data-category="all">All Books</button>
+                    <button class="category-tab-btn" data-category="science">Science</button>
+                    <button class="category-tab-btn" data-category="biology">Biology</button>
+                    <button class="category-tab-btn" data-category="story">Story</button>
+                    <button class="category-tab-btn" data-category="computer">Computer</button>
+                </div>
+
+                <div class="books-scroll-grid" id="books-grid-container">
+                    <div style="grid-column: span 4; text-align: center; color: #718096; padding: 40px 0; width: 100%;">
+                        <i class="fa-solid fa-spinner fa-spin"
+                            style="font-size: 32px; margin-bottom: 10px; display: block; color: #cbd5e0;"></i>
+                        Loading books catalog...
+                    </div>
+                </div>
+            </div>
+            <div class="assign-drawer-panel" id="assign-book-panel">
+                <button class="assign-drawer-close" id="close-assign-panel-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="assign-panel-header">
+                    <h2><i class="fa-solid fa-book-medical"></i> Assign & Return</h2>
+                    <p>Manage book issues and returns instantly</p>
+                </div>
+
+                <div class="drawer-separator"></div>
+
+                <div class="sub-view-form">
+                    <div class="form-group-item">
+                        <label>Student Name / ID</label>
+                        <input type="text" placeholder="Enter student enrollment number...">
+                    </div>
+
+                    <div class="form-group-item">
+                        <label>Book Number / Code</label>
+                        <input type="text" placeholder="e.g., #101, #204...">
+                    </div>
+
+                    <div class="form-group-item">
+                        <label>Action Type</label>
+                        <select>
+                            <option value="assign">Issue / Assign Book</option>
+                            <option value="return">Return / Collect Book</option>
+                        </select>
+                    </div>
+
+                    <button class="save-preference-btn" style="width: 100%; margin-top: 20px;">
+                        Confirm Action
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans-section" class="dashboard-viewport-section">
+            <div class="active-plan-banner-row">
+                <div class="active-banner-info">
+                    <div class="banner-title-flex">
+                        <h2><i class="fa-solid fa-crown"></i> Active Premium Plan Details</h2>
+                        <span class="active-status-pill"><span class="status-dot"></span> Active</span>
+                    </div>
+                    <p class="active-plan-meta"><strong>All-Access Membership</strong> • Seat 45 • Night Shift (06:00 PM
+                        - 12:00 AM)</p>
+                </div>
+                <div class="active-banner-timeline">
+                    <div class="timeline-meta-text">
+                        <span class="pro-days-badge"><i class="fa-solid fa-hourglass-half"></i> 12 Days Remaining</span>
+                        <span class="duration-text">Started: 18 Days Ago (Total 30 Days)</span>
+                    </div>
+                    <div class="pro-track-bar">
+                        <div class="pro-fill-bar" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-grid-wrapper">
+                <div class="pricing-section-header">
+                    <h3>Choose a Shift Duration & Plan</h3>
+                    <p>Upgrade or switch your active plan seamlessly</p>
+                </div>
+
+                <div class="library-pricing-grid">
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h4>6 Hours</h4>
+                            <span class="hours-sub">Daily Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹300</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item plan-active-row">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹500</span>
+                                <button class="plan-action-btn active-btn" disabled><i
+                                        class="fa-solid fa-circle-check"></i> Active</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹1,300</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹2,500</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-sun"></i></div>
+                            <h4>12 Hours</h4>
+                            <span class="hours-sub">Half Day Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹600</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹1,000</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹2,600</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹5,000</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-moon"></i></div>
+                            <h4>18 Hours</h4>
+                            <span class="hours-sub">Extended Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹900</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹1,500</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹3,900</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹7,500</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-slide-card premium-card">
+                        <div class="card-hours-header">
+                            <div class="hours-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <h4>24 Hours</h4>
+                            <span class="hours-sub">Full Day Access</span>
+                        </div>
+                        <div class="plans-price-list">
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Week</span>
+                                <span class="price-val">₹1,200</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">1 Month</span>
+                                <span class="price-val">₹2,000</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">3 Month</span>
+                                <span class="price-val">₹5,200</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                            <div class="price-row-item">
+                                <span class="duration-lbl">6 Month</span>
+                                <span class="price-val">₹10,000</span>
+                                <button class="plan-action-btn upgrade-btn">Upgrade</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="notification-dropdown-box" id="notification-dropdown">
+        <div class="noti-box-header">
+            <h4><i class="fa-regular fa-bell"></i> Alerts & Messages</h4>
+            <button class="noti-box-close" id="close-noti-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="noti-box-body">
+            <div class="noti-card alert-red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div class="noti-msg-details">
+                    <h6>Plan Expiration Notice</h6>
+                    <p>Your current active plan is going to expire within a few days. Kindly renew your subscription
+                        soon to retain your desk assignment.</p>
+                </div>
+            </div>
+            <div class="noti-card alert-blue">
+                <i class="fa-regular fa-clock"></i>
+                <div class="noti-msg-details">
+                    <h6>Library Operations Schedule</h6>
+                    <p>Please note that the library will close its doors strictly on the designated operational timings.
+                        Plan your study session accordingly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-drawer-overlay" id="drawer-overlay"></div>
+    <div class="profile-drawer-panel" id="profile-drawer">
+        <button class="profile-drawer-close" id="close-profile-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <div id="drawer-main-content">
+            <div class="drawer-profile-summary">
+                <div class="drawer-avatar-ring">
+                    <img src="VIKASH.jpeg" alt="Vikash">
+                </div>
+                <h2>Vikash Kumawat</h2>
+                <p><i class="fa-regular fa-envelope"></i> vikashkumawat@gmail.com</p>
+            </div>
+
+            <hr class="drawer-separator">
+
+            <div class="drawer-links-stack">
+                <a href="#" id="personal-details-trigger"><i class="fa-regular fa-user"></i> Personal Account
+                    Details</a>
+                <!-- <a href="#" class="drawer-logout-action"><i class="fa-solid fa-power-off"></i> Logout Dashboard</a> -->
+                <a href="#" class="drawer-logout-action"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                    Dashboard</a>
+            </div>
+        </div>
+
+        <div id="drawer-sub-view" class="drawer-sub-view">
+            <button class="sub-view-back-btn" id="sub-view-back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <div id="sub-view-content"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const userId = sessionStorage.getItem("userId");
+            if (!userId || sessionStorage.getItem("role") !== "student") {
+                // Force login if not authenticated
+                sessionStorage.clear();
+                window.location.href = "login.html";
+                return;
+            }
+
+            let studentData = null;
+            let allBooks = [];
+
+            // 1. Fetch Student Profile and Setup Dashboard
+            function loadDashboardData() {
+                fetch(`http://localhost:3001/api/user/profile?userId=${userId}`)
+                    .then(res => {
+                        if (!res.ok) throw new Error("Failed to load profile");
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            studentData = data.student;
+                            updateStudentUI(data.student, data.issuedBooks);
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Error loading dashboard data. Redirecting to login...");
+                        window.location.href = "login.html";
+                    });
+            }
+
+            function updateStudentUI(student, issuedBooks) {
+                // Update Name & Welcome Header
+                document.querySelectorAll(".user-name").forEach(el => el.textContent = student.name);
+                const welcomeTitle = document.querySelector(".hero-left-content h1");
+                if (welcomeTitle) welcomeTitle.textContent = `Welcome back, ${student.name}!`;
+
+                const drawerName = document.querySelector(".drawer-profile-summary h2");
+                if (drawerName) drawerName.textContent = student.name;
+
+                // Update Avatar Image
+                const photoSrc = student.photo ? student.photo : "VIKASH.jpeg";
+                document.querySelectorAll(".user-avatar, .drawer-profile-summary img").forEach(img => {
+                    img.src = photoSrc;
+                });
+
+                // Update Active Reservation Specs
+                const specsList = document.querySelector(".specs-list");
+                if (specsList) {
+                    specsList.innerHTML = `
+                        <h3>Active Reservation</h3>
+                        <p><i class="fa-solid fa-border-all"></i> <strong>Seat:</strong> No. ${student.selectedSeat || 'N/A'}</p>
+                        <p><i class="fa-regular fa-clock"></i> <strong>Slot:</strong> ${student.slot || 'N/A'}</p>
+                    `;
+                }
+
+                // Update Total Assigned Books count metric
+                const bookMetric = document.querySelector(".metric-number");
+                if (bookMetric) bookMetric.textContent = String(issuedBooks.length).padStart(2, '0');
+
+                // Update Membership Timeline progress
+                const regDate = new Date(student.registeredAt);
+                const expDate = new Date(student.expiresAt);
+                const currentDate = new Date();
+
+                const totalTime = Math.max(1, expDate - regDate);
+                const timePassed = Math.max(0, currentDate - regDate);
+
+                let progressPercent = Math.min(100, Math.round((timePassed / totalTime) * 100));
+                let daysRemaining = Math.max(0, Math.ceil((expDate - currentDate) / (1000 * 60 * 60 * 24)));
+                let totalDays = Math.round(totalTime / (1000 * 60 * 60 * 24));
+                let daysPassed = Math.round(timePassed / (1000 * 60 * 60 * 24));
+
+                const daysBadge = document.querySelector(".days-badge");
+                const progressFill = document.querySelector(".progress-fill");
+                const tooltip = document.querySelector(".progress-tooltip");
+                const footerStart = document.querySelector(".start-date");
+                const footerEnd = document.querySelector(".end-date");
+
+                if (daysBadge) daysBadge.textContent = `${daysRemaining} Days Remaining`;
+                if (progressFill) progressFill.style.width = `${progressPercent}%`;
+                if (tooltip) tooltip.textContent = `${progressPercent}% Over`;
+                if (footerStart) footerStart.textContent = `Started: ${daysPassed} Days Ago`;
+                if (footerEnd) footerEnd.textContent = `Total Plan: ${totalDays} Days`;
+
+                // Update Plans tab active banner
+                const activePlanMeta = document.querySelector(".active-plan-meta");
+                if (activePlanMeta) {
+                    activePlanMeta.innerHTML = `<strong>All-Access Membership</strong> • Seat ${student.selectedSeat || 'N/A'} • ${student.slot || 'N/A'} Shift (${student.duration} Hours)`;
+                }
+                const proDaysBadge = document.querySelector(".pro-days-badge");
+                if (proDaysBadge) {
+                    proDaysBadge.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> ${daysRemaining} Days Remaining`;
+                }
+                const durationText = document.querySelector(".duration-text");
+                if (durationText) {
+                    durationText.textContent = `Started: ${daysPassed} Days Ago (Total ${totalDays} Days)`;
+                }
+                const proFillBar = document.querySelector(".pro-fill-bar");
+                if (proFillBar) {
+                    proFillBar.style.width = `${progressPercent}%`;
+                }
+
+                // Update pricing grid buttons dynamically
+                const pricingCards = document.querySelectorAll(".pricing-slide-card");
+                pricingCards.forEach(card => {
+                    const cardHoursHeader = card.querySelector("h4");
+                    if (!cardHoursHeader) return;
+                    const cardHours = cardHoursHeader.textContent.trim(); // e.g. "6 Hours", "12 Hours"
+
+                    const priceRows = card.querySelectorAll(".price-row-item");
+                    priceRows.forEach(row => {
+                        const durationLbl = row.querySelector(".duration-lbl");
+                        if (!durationLbl) return;
+                        const rowPlanName = durationLbl.textContent.trim().toLowerCase(); // e.g. "1 week", "1 month"
+
+                        // Map database plan code to human label
+                        let isPlanMatch = false;
+                        if (student.plan === '1w' && rowPlanName.includes('week')) isPlanMatch = true;
+                        else if (student.plan === '1m' && rowPlanName === '1 month') isPlanMatch = true;
+                        else if (student.plan === '3m' && rowPlanName.includes('3 month')) isPlanMatch = true;
+                        else if (student.plan === '6m' && rowPlanName.includes('6 month')) isPlanMatch = true;
+
+                        const isHoursMatch = (cardHours === `${student.duration} Hours`);
+
+                        if (isHoursMatch && isPlanMatch) {
+                            row.classList.add("plan-active-row");
+                            const actionBtn = row.querySelector(".plan-action-btn");
+                            if (actionBtn) {
+                                actionBtn.outerHTML = `<button class="plan-action-btn active-btn" disabled><i class="fa-solid fa-circle-check"></i> Active</button>`;
+                            }
+                        } else {
+                            row.classList.remove("plan-active-row");
+                            const actionBtn = row.querySelector(".plan-action-btn");
+                            if (actionBtn) {
+                                actionBtn.outerHTML = `<button class="plan-action-btn upgrade-btn">Upgrade</button>`;
+                            }
+                        }
+                    });
+                });
+
+                // Update Issued Books shelf
+                const shelf = document.querySelector(".shelf-books-row");
+                if (shelf) {
+                    if (issuedBooks.length === 0) {
+                        shelf.innerHTML = `
+                            <div style="width: 100%; text-align: center; color: #718096; padding: 30px 0; font-weight: 500;">
+                                <i class="fa-solid fa-book-open" style="font-size: 32px; margin-bottom: 10px; display: block; color: #cbd5e0;"></i>
+                                No books currently assigned. Contact Librarian to issue.
+                            </div>
+                        `;
+                    } else {
+                        shelf.innerHTML = issuedBooks.map(ib => {
+                            const bookInfo = allBooks.find(b => b.bookId === ib.bookId);
+                            const coverStyle = bookInfo && bookInfo.coverImage
+                                ? `background-image: url('${bookInfo.coverImage}'); background-size: cover; background-position: center;`
+                                : `background: ${(bookInfo && bookInfo.coverGradient) || 'linear-gradient(135deg, #667eea, #764ba2)'};`;
+                            const innerIcon = bookInfo && bookInfo.coverImage ? '' : `<i class="fa-solid fa-book" style="color: #ffffff; font-size: 36px;"></i>`;
+                            return `
+                                <div class="shelf-book-item">
+                                    <div class="book-cover-mock" style="${coverStyle} display:flex; align-items:center; justify-content:center; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                                        ${innerIcon}
+                                    </div>
+                                    <h4>${ib.bookTitle}</h4>
+                                    <p class="book-id-tag">Book Code: #${ib.bookId}</p>
+                                </div>
+                            `;
+                        }).join('');
+                    }
+                }
+
+                // Update Profile Drawer summary email
+                const emailP = document.querySelector(".drawer-profile-summary p");
+                if (emailP) emailP.innerHTML = `<i class="fa-regular fa-envelope"></i> ${student.email}`;
+
+                // Update Notifications drawer dynamically
+                const notiBoxBody = document.querySelector(".noti-box-body");
+                const notificationDot = document.querySelector(".notification-dot");
+                if (notiBoxBody) {
+                    const notices = student.notifications || [];
+                    if (notices.length === 0) {
+                        if (notificationDot) notificationDot.style.display = "none";
+                        notiBoxBody.innerHTML = `
+                            <div style="text-align: center; color: #718096; padding: 30px 10px;">
+                                <i class="fa-regular fa-bell-slash" style="font-size: 24px; margin-bottom: 8px; display: block; color: #cbd5e0;"></i>
+                                No new notices from the librarian.
+                            </div>
+                        `;
+                    } else {
+                        if (notificationDot) notificationDot.style.display = "block";
+                        notiBoxBody.innerHTML = notices.map(notice => `
+                            <div class="noti-card alert-blue">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <div class="noti-msg-details">
+                                    <h6>Notice from Librarian</h6>
+                                    <p>${notice.text}</p>
+                                    <span style="font-size:10px; color:#94a3b8; display:block; margin-top:4px;">${new Date(notice.timestamp).toLocaleString()}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            }
+
+            // Load Books list for Books Tab
+            function loadBooksInventory() {
+                fetch('http://localhost:3001/api/books')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            allBooks = data.books;
+                            renderBooksGrid(allBooks);
+                        }
+                    })
+                    .catch(err => console.error("Error loading books stock:", err));
+            }
+
+            function renderBooksGrid(books) {
+                const booksGrid = document.getElementById("books-grid-container");
+                if (!booksGrid) return;
+
+                if (books.length === 0) {
+                    booksGrid.innerHTML = `
+                        <div style="grid-column: span 4; text-align: center; color: #718096; padding: 40px 0; font-weight: 500;">
+                            No matching books found in inventory.
+                        </div>
+                    `;
+                } else {
+                    booksGrid.innerHTML = books.map(book => {
+                        const statusText = book.currentStock > 0
+                            ? `<span style="color:#10b981; font-weight:600;"><i class="fa-solid fa-circle-check"></i> Available (${book.currentStock})</span>`
+                            : `<span style="color:#ef4444; font-weight:600;"><i class="fa-solid fa-circle-xmark"></i> Out of Stock</span>`;
+
+                        const coverStyle = book.coverImage
+                            ? `background-image: url('${book.coverImage}'); background-size: cover; background-position: center;`
+                            : `background: ${book.coverGradient || 'linear-gradient(135deg, #1e293b, #0f172a)'};`;
+                        const innerIcon = book.coverImage ? '' : `<i class="fa-solid fa-book-bookmark" style="color: #60a5fa; font-size: 40px;"></i>`;
+
+                    
+
+
+                        return `
+                        <div class="grid-book-card" data-category="${book.category}" data-name="${book.title.toLowerCase()}">
+                            <div class="book-placeholder-bg" style="${coverStyle} border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                                ${innerIcon}
+                            </div>
+                            <h4 style="margin-top: 12px; font-size: 15px; font-weight:700;">${book.title}</h4>
+                            <span class="grid-book-number" style="display:block; margin: 4px 0 6px 0;">Book Code: #${book.bookId}</span>
+                            <div style="font-size:12px; margin-top:5px;">${statusText}</div>
+                        </div>
+                        `;
+                    }).join('');
+                }
+            }
+
+            // 2. Tab Navigation
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('.dashboard-viewport-section');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const targetId = item.getAttribute('data-target');
+                    sections.forEach(sec => {
+                        sec.classList.remove('active');
+                        if (sec.id === targetId) sec.classList.add('active');
+                    });
+                });
+            });
+
+            // 3. Profile & Notification Drawer Controls
+            const profileTrigger = document.getElementById('profile-widget-trigger');
+            const profileDrawer = document.getElementById('profile-drawer');
+            const drawerOverlay = document.getElementById('drawer-overlay');
+            const closeProfileBtn = document.getElementById('close-profile-btn');
+
+            const notiTrigger = document.getElementById('notification-trigger');
+            const notiDropdown = document.getElementById('notification-dropdown');
+            const closeNotiBtn = document.getElementById('close-noti-btn');
+
+            if (profileTrigger) {
+                profileTrigger.addEventListener('click', () => {
+                    profileDrawer.classList.add('open');
+                    drawerOverlay.classList.add('active');
+                    notiDropdown.classList.remove('open');
+                });
+            }
+
+            const closeEverything = () => {
+                if (profileDrawer) profileDrawer.classList.remove('open');
+                if (notiDropdown) notiDropdown.classList.remove('open');
+                if (drawerOverlay) drawerOverlay.classList.remove('active');
+                const subView = document.getElementById('drawer-sub-view');
+                if (subView) subView.classList.remove('active');
+            };
+
+            if (closeProfileBtn) closeProfileBtn.addEventListener('click', closeEverything);
+            if (drawerOverlay) drawerOverlay.addEventListener('click', closeEverything);
+
+            if (notiTrigger) {
+                notiTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    notiDropdown.classList.toggle('open');
+                    if (notiDropdown.classList.contains('open')) {
+                        drawerOverlay.classList.add('active');
+                        profileDrawer.classList.remove('open');
+                    } else {
+                        drawerOverlay.classList.remove('active');
+                    }
+                });
+            }
+
+            if (closeNotiBtn) closeNotiBtn.addEventListener('click', closeEverything);
+
+            // 4. Books Filter & Search Logic
+            const searchInput = document.getElementById('global-book-search');
+            const categoryButtons = document.querySelectorAll('.category-tab-btn');
+
+            let currentCategory = 'all';
+            let searchQuery = '';
+
+            function filterBooksList() {
+                const filtered = allBooks.filter(book => {
+                    const matchesCategory = (currentCategory === 'all' || book.category === currentCategory);
+                    const matchesSearch = book.title.toLowerCase().includes(searchQuery);
+                    return matchesCategory && matchesSearch;
+                });
+                renderBooksGrid(filtered);
+            }
+
+            if (categoryButtons) {
+                categoryButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        categoryButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentCategory = btn.getAttribute('data-category') || 'all';
+                        filterBooksList();
+                    });
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value.toLowerCase();
+                    filterBooksList();
+                });
+            }
+
+            // 5. Drawer Personal Details & Preference Sub-views
+            const personalTrigger = document.getElementById('personal-details-trigger');
+            const subView = document.getElementById('drawer-sub-view');
+            const subViewContent = document.getElementById('sub-view-content');
+            const subViewBack = document.getElementById('sub-view-back');
+
+            if (personalTrigger) {
+                personalTrigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!studentData) return;
+                    subViewContent.innerHTML = `
+                            <div class="sub-view-form">
+                            <h3><i class="fa-regular fa-user"></i> Personal Account Details</h3>
+                            <div class="form-group-item">
+                                <label>Full Name</label>
+                                <input type="text" value="${studentData.name}" readonly>
+                            </div>
+                            <div class="form-group-item">
+                                <label>User ID</label>
+                                <input type="text" value="${studentData.userId}" readonly style="font-weight:700; color:#007cef;">
+                            </div>
+                            <div class="form-group-item">
+                                <label>Phone Number</label>
+                                <input type="text" value="${studentData.phone}" readonly>
+                            </div>
+                            <div class="form-group-item">
+                                <label>Email Address</label>
+                                <input type="email" value="${studentData.email}" readonly>
+                            </div>
+                            <div class="form-group-item">
+                                <label>Residential Address</label>
+                                <textarea readonly>${studentData.address}</textarea>
+                            </div>
+                        </div >
+                    `;
+                    subView.classList.add('active');
+                });
+            }
+
+            // Desk Preference Setting functionality removed
+
+            if (subViewBack) {
+                subViewBack.addEventListener('click', () => {
+                    subView.classList.remove('active');
+                });
+            }
+
+            // 6. Handle Logout
+            const logoutBtns = document.querySelectorAll(".drawer-logout-action");
+            logoutBtns.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm("Are you sure you want to logout?")) {
+                        sessionStorage.clear();
+                        window.location.href = "login.html";
+                    }
+                });
+            });
+
+            // 7. Manual Issue / Return Drawer Simulator for Student Dashboard (Optional helper)
+            const assignPanel = document.getElementById('assign-book-panel');
+            const openAssignBtn = document.getElementById('open-assign-panel-btn');
+            const closeAssignBtn = document.getElementById('close-assign-panel-btn');
+            const overlay = document.querySelector('.profile-drawer-overlay');
+
+            if (openAssignBtn && assignPanel) {
+                openAssignBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    assignPanel.classList.add('open');
+                    if (overlay) overlay.add('active');
+                    // Pre-fill user UID
+                    const uidInput = assignPanel.querySelector('input[placeholder*="enrollment"]');
+                    if (uidInput) uidInput.value = userId;
+                });
+            }
+
+            if (closeAssignBtn && assignPanel) {
+                closeAssignBtn.addEventListener('click', () => {
+                    assignPanel.classList.remove('open');
+                    if (overlay) overlay.classList.remove('active');
+                });
+            }
+
+            // Bind drawer submit action to update inventory
+            const confirmActionBtn = assignPanel ? assignPanel.querySelector('.save-preference-btn') : null;
+            if (confirmActionBtn && assignPanel) {
+                confirmActionBtn.addEventListener('click', () => {
+                    const bookCodeInput = assignPanel.querySelector('input[placeholder*="e.g."]');
+                    const actionSelect = assignPanel.querySelector('select');
+
+                    const bookCode = bookCodeInput ? bookCodeInput.value.trim().replace('#', '') : '';
+                    const actionType = actionSelect ? actionSelect.value : 'assign';
+
+                    if (!bookCode) {
+                        alert("Please enter a book code.");
+                        return;
+                    }
+
+                    fetch('http://localhost:3001/api/admin/books/action', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId, bookCode, actionType })
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            alert(data.message);
+                            if (data.success) {
+                                assignPanel.classList.remove('open');
+                                if (overlay) overlay.classList.remove('active');
+                                // Reload details
+                                loadDashboardData();
+                                loadBooksInventory();
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            alert("Transaction failed.");
+                        });
+                });
+            }
+
+            // Dynamic pricing loading
+            function loadPlanPrices() {
+                fetch('http://localhost:3001/api/plans/prices')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success && data.prices) {
+                            renderPlanPrices(data.prices);
+                        }
+                    })
+                    .catch(err => console.error("Error loading pricing matrix:", err));
+            }
+
+            function renderPlanPrices(prices) {
+                const pricingCards = document.querySelectorAll(".pricing-slide-card");
+                pricingCards.forEach(card => {
+                    const h4 = card.querySelector("h4");
+                    if (!h4) return;
+                    const hoursStr = h4.textContent.trim().split(" ")[0]; // e.g. "6", "12", "18", "24"
+                    const rows = card.querySelectorAll(".price-row-item");
+                    rows.forEach(row => {
+                        const lbl = row.querySelector(".duration-lbl").textContent.trim().toLowerCase();
+                        let planCode = "1m";
+                        if (lbl.includes("week") || lbl.includes("1w")) planCode = "1w";
+                        else if (lbl.includes("3 month") || lbl.includes("3m")) planCode = "3m";
+                        else if (lbl.includes("6 month") || lbl.includes("6m")) planCode = "6m";
+                        else planCode = "1m";
+
+                        const valSpan = row.querySelector(".price-val");
+                        if (valSpan && prices[hoursStr] && prices[hoursStr][planCode] !== undefined) {
+                            valSpan.textContent = "₹" + parseFloat(prices[hoursStr][planCode]).toLocaleString('en-IN');
+                        }
+                    });
+                });
+            }
+
+            // =========================================================================
+            // Notification auto-popup: shows unread notices the first time this
+            // session, then marks them read (server auto-deletes read ones after 24h)
+            // =========================================================================
+            function showNotificationPopup(notifications) {
+                const old = document.getElementById("noti-auto-popup");
+                if (old) old.remove();
+
+                const itemsHtml = notifications.map(n => `
+                    <div class="noti-card alert-blue" style="margin-bottom: 10px;">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div class="noti-msg-details">
+                            <h6>Notice from Librarian</h6>
+                            <p>${n.text}</p>
+                            <span style="font-size:10px; color:#94a3b8; display:block; margin-top:4px;">${new Date(n.timestamp).toLocaleString()}</span>
+                        </div>
+                    </div>
+                `).join('');
+
+                const overlayHtml = `
+                    <div class="noti-popup-overlay" id="noti-auto-popup">
+                        <div class="noti-popup-box">
+                            <div class="noti-popup-header">
+                                <i class="fa-solid fa-bell"></i>
+                                <h3>You have ${notifications.length} new notice${notifications.length > 1 ? 's' : ''}</h3>
+                            </div>
+                            ${itemsHtml}
+                            <button class="noti-popup-close-btn" id="noti-auto-popup-close">Got it, thanks!</button>
+                        </div>
+                    </div>
+                `;
+                document.body.insertAdjacentHTML('beforeend', overlayHtml);
+
+                document.getElementById("noti-auto-popup-close").addEventListener("click", () => {
+                    const popup = document.getElementById("noti-auto-popup");
+                    if (popup) popup.remove();
+                    // Mark as read server-side; they'll auto-clear from the database 24h from now.
+                    fetch('http://localhost:3001/api/user/notifications/mark-read', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId })
+                    }).catch(() => {});
+                });
+            }
+
+            function checkUnreadNotificationsOnce() {
+                const sessionFlagKey = `notifShown_${userId}`;
+                if (sessionStorage.getItem(sessionFlagKey)) return; // already shown this login session
+                fetch(`http://localhost:3001/api/user/notifications/unread?userId=${userId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success && data.notifications && data.notifications.length > 0) {
+                            sessionStorage.setItem(sessionFlagKey, "true");
+                            showNotificationPopup(data.notifications);
+                        }
+                    })
+                    .catch(err => console.error("Error checking notifications:", err));
+            }
+
+            // =========================================================================
+            // Upgrade Plan: clicking "Upgrade" on any plan card takes the user
+            // straight to seat selection for that plan, then to a payment page that
+            // charges ONLY the new plan (same User ID, same account).
+            // =========================================================================
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest(".upgrade-btn");
+                if (!btn) return;
+                const plansSection = document.getElementById("plans-section");
+                if (!plansSection || !plansSection.contains(btn)) return;
+
+                const card = btn.closest(".pricing-slide-card");
+                const row = btn.closest(".price-row-item");
+                if (!card || !row) return;
+
+                const hoursText = card.querySelector("h4").textContent.trim(); // e.g. "6 Hours"
+                const duration = hoursText.split(" ")[0];
+                const lbl = row.querySelector(".duration-lbl").textContent.trim().toLowerCase();
+                let planCode = "1m";
+                if (lbl.includes("week")) planCode = "1w";
+                else if (lbl.includes("3 month")) planCode = "3m";
+                else if (lbl.includes("6 month")) planCode = "6m";
+
+                const planLabelText = row.querySelector(".duration-lbl").textContent.trim();
+                if (!confirm(`Upgrade to ${planLabelText} / ${hoursText}?\n\nYou'll pick a new seat and pay only for this plan — your User ID stays the same.`)) {
+                    return;
+                }
+
+                btn.disabled = true;
+                fetch('http://localhost:3001/api/plans/prices')
+                    .then(res => res.json())
+                    .then(data => {
+                        const prices = data.success ? data.prices : {};
+                        const base = (prices[duration] && prices[duration][planCode] !== undefined)
+                            ? parseFloat(prices[duration][planCode]) : 0;
+                        const gst = base * 0.05;
+                        const total = base + gst;
+
+                        const slotSeq = ["6-12", "12-6", "6-24", "24-6"];
+                        const slotNamesMap = { "6-12": "Morning", "12-6": "Afternoon", "6-24": "Evening", "24-6": "Night" };
+                        const requiredCount = Math.max(1, parseInt(duration) / 6);
+                        let finalSlots = [];
+                        for (let i = 0; i < requiredCount; i++) {
+                            finalSlots.push(slotNamesMap[slotSeq[i % slotSeq.length]]);
+                        }
+
+                        // Seed sessionStorage exactly like the normal plan.html step would,
+                        // then skip straight to seat selection as required.
+                        sessionStorage.setItem("upgradeMode", "true");
+                        sessionStorage.setItem("upgradeUserId", userId);
+                        sessionStorage.setItem("mainPlan", planCode);
+                        sessionStorage.setItem("duration", duration);
+                        sessionStorage.setItem("startSlotRaw", slotSeq[0]);
+                        sessionStorage.setItem("slot", finalSlots.join(", "));
+                        sessionStorage.setItem("planPrice", base.toFixed(2));
+                        sessionStorage.setItem("gstAmount", gst.toFixed(2));
+                        sessionStorage.setItem("totalAmount", total.toFixed(2));
+                        sessionStorage.removeItem("selectedSeat");
+                        sessionStorage.setItem("is_navigating", "true");
+
+                        window.location.href = "slot.html";
+                    })
+                    .catch(() => {
+                        btn.disabled = false;
+                        alert("Could not load current pricing. Please try again.");
+                    });
+            });
+
+            // Run initial load
+            loadDashboardData();
+            loadBooksInventory();
+            loadPlanPrices();
+            checkUnreadNotificationsOnce();
+        });
+    </script>
+</body>
+
+</html>
