@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -20,6 +21,10 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  res.send('Smart Library System Backend is Running Successfully!');
+});
 
 // Ensure uploads folder exists
 const uploadsDir = path.join(__dirname, 'uploads');
