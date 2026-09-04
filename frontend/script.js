@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 btn.disabled = true;
                 btn.innerHTML = `Uploading Files... <i class="fa-solid fa-spinner fa-spin"></i>`;
 
-                fetch('http://localhost:3001/api/upload-temp', {
+                fetch('/api/upload-temp', {
                     method: 'POST',
                     body: formData
                 })
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Fetch dynamic pricing matrix on load
-        fetch('http://localhost:3001/api/plans/prices')
+        fetch('/api/plans/prices')
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(err => console.error("Error loading pricing matrix:", err));
 
         // Fetch dynamic slots on load
-        fetch('http://localhost:3001/api/slots')
+        fetch('/api/slots')
             .then(res => res.json())
             .then(data => {
                 if (data.success && data.slots && data.slots.length > 0) {
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const userSlotsChain = savedSlotString.split(", ").map(s => s.trim());
 
         // Fetch dynamic slot details first to construct DOM containers as needed
-        fetch('http://localhost:3001/api/slots')
+        fetch('/api/slots')
             .then(res => res.json())
             .then(data => {
                 const slots = data.success ? data.slots : [];
@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         totalAmount: sessionStorage.getItem("totalAmount")
                     };
 
-                    fetch('http://localhost:3001/api/user/upgrade', {
+                    fetch('/api/user/upgrade', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(upgradeData)
@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     totalAmount: sessionStorage.getItem("totalAmount")
                 };
 
-                fetch('http://localhost:3001/api/register', {
+                fetch('/api/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(regData)

@@ -19,7 +19,7 @@ if (isConfigured) {
 }
 
 const FROM_ADDRESS = process.env.SMTP_FROM || `"Smart Library" <${process.env.SMTP_USER || 'no-reply@smartlibrary.local'}>`;
-const LOGIN_URL = process.env.APP_LOGIN_URL || 'http://localhost:3001/login.html';
+const LOGIN_URL = process.env.APP_LOGIN_URL || '/login.html';
 
 /**
  * Sends an email. Falls back to console logging if SMTP isn't configured

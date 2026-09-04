@@ -423,7 +423,7 @@
 
             // 1. Fetch Student Profile and Setup Dashboard
             function loadDashboardData() {
-                fetch(`http://localhost:3001/api/user/profile?userId=${userId}`)
+                fetch(`/api/user/profile?userId=${userId}`)
                     .then(res => {
                         if (!res.ok) throw new Error("Failed to load profile");
                         return res.json();
@@ -616,7 +616,7 @@
 
             // Load Books list for Books Tab
             function loadBooksInventory() {
-                fetch('http://localhost:3001/api/books')
+                fetch('/api/books')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -859,7 +859,7 @@
                         return;
                     }
 
-                    fetch('http://localhost:3001/api/admin/books/action', {
+                    fetch('/api/admin/books/action', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ userId, bookCode, actionType })
@@ -884,7 +884,7 @@
 
             // Dynamic pricing loading
             function loadPlanPrices() {
-                fetch('http://localhost:3001/api/plans/prices')
+                fetch('/api/plans/prices')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success && data.prices) {
@@ -954,7 +954,7 @@
                     const popup = document.getElementById("noti-auto-popup");
                     if (popup) popup.remove();
                     // Mark as read server-side; they'll auto-clear from the database 24h from now.
-                    fetch('http://localhost:3001/api/user/notifications/mark-read', {
+                    fetch('/api/user/notifications/mark-read', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ userId })
@@ -965,7 +965,7 @@
             function checkUnreadNotificationsOnce() {
                 const sessionFlagKey = `notifShown_${userId}`;
                 if (sessionStorage.getItem(sessionFlagKey)) return; // already shown this login session
-                fetch(`http://localhost:3001/api/user/notifications/unread?userId=${userId}`)
+                fetch(`/api/user/notifications/unread?userId=${userId}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data.success && data.notifications && data.notifications.length > 0) {
@@ -1005,7 +1005,7 @@
                 }
 
                 btn.disabled = true;
-                fetch('http://localhost:3001/api/plans/prices')
+                fetch('/api/plans/prices')
                     .then(res => res.json())
                     .then(data => {
                         const prices = data.success ? data.prices : {};

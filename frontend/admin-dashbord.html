@@ -640,7 +640,7 @@
 
             // 4. Fetch Stats, Payments & Logs (Overview Screen)
             function loadDashboardStats() {
-                fetch('http://localhost:3001/api/admin/dashboard')
+                fetch('/api/admin/dashboard')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -691,7 +691,7 @@
 
             // 5. Fetch Students Directory and Bind Actions
             function loadStudentsDirectory() {
-                fetch('http://localhost:3001/api/admin/users')
+                fetch('/api/admin/users')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -883,7 +883,7 @@
                     saveBtn.disabled = true;
                     saveBtn.textContent = "Saving...";
 
-                    fetch('http://localhost:3001/api/admin/users/update', {
+                    fetch('/api/admin/users/update', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ userId, name, phone, email, selectedSeat, slot, plan, idProofType, address })
@@ -958,7 +958,7 @@
                         const msgText = prompt(`Send notification message to ${studentName} (${uid}):`);
                         if (!msgText || !msgText.trim()) return;
 
-                        fetch('http://localhost:3001/api/admin/users/message', {
+                        fetch('/api/admin/users/message', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ userId: uid, text: msgText.trim() })
@@ -977,7 +977,7 @@
 
             // 7. Load Books Inventory & Filter Search Logic
             function loadBooksInventory() {
-                fetch('http://localhost:3001/api/books')
+                fetch('/api/books')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -1093,7 +1093,7 @@
                     confirmBtn.disabled = true;
                     confirmBtn.textContent = "Processing...";
 
-                    fetch('http://localhost:3001/api/admin/books/action', {
+                    fetch('/api/admin/books/action', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ userId, bookCode, actionType })
@@ -1130,7 +1130,7 @@
                     const msgText = prompt("Enter notification message to Broadcast to All registered students:");
                     if (!msgText || !msgText.trim()) return;
 
-                    fetch('http://localhost:3001/api/admin/users/broadcast', {
+                    fetch('/api/admin/users/broadcast', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ text: msgText.trim() })
@@ -1400,7 +1400,7 @@
 
             // Dynamic plan pricing loading & updates
             function loadPlanPrices() {
-                fetch('http://localhost:3001/api/plans/prices')
+                fetch('/api/plans/prices')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success && data.prices) {
@@ -1463,7 +1463,7 @@
                             return;
                         }
 
-                        fetch('http://localhost:3001/api/plans/update-price', {
+                        fetch('/api/plans/update-price', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ duration: hoursStr, plan: planCode, price: newPrice })
@@ -1495,7 +1495,7 @@
                     const originalHtml = refreshCoversBtn.innerHTML;
                     refreshCoversBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Fetching covers...`;
 
-                    fetch('http://localhost:3001/api/admin/books/backfill-covers', { method: 'POST' })
+                    fetch('/api/admin/books/backfill-covers', { method: 'POST' })
                         .then(res => res.json())
                         .then(data => {
                             refreshCoversBtn.disabled = false;
@@ -1523,7 +1523,7 @@
                     }
 
                     broadcastBtnDropdown.disabled = true;
-                    fetch('http://localhost:3001/api/admin/users/broadcast', {
+                    fetch('/api/admin/users/broadcast', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ text })

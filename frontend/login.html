@@ -176,7 +176,8 @@
                 btn.disabled = true;
                 btn.innerHTML = `Signing In... <i class="fa-solid fa-spinner fa-spin"></i>`;
 
-                fetch('http://localhost:3001/api/login', {
+                // fetch('/api/login', {
+                fetch('/api/forgot-id',{
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, userId: id })
@@ -252,7 +253,8 @@
             forgotSubmitBtn.innerHTML = `Sending... <i class="fa-solid fa-spinner fa-spin"></i>`;
             forgotStatus.textContent = "";
 
-            fetch('http://localhost:3001/api/forgot-id', {
+            // fetch('/api/forgot-id', {
+            fetch('/api/forgot-id',{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
