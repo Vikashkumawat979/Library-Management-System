@@ -22,8 +22,12 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'frontend')));
+
 app.get('/', (req, res) => {
-  res.send('Smart Library System Backend is Running Successfully!');
+  res.sendFile(path.join(__dirname, 'frontend', 'login.html'));
 });
 
 // Ensure uploads folder exists
