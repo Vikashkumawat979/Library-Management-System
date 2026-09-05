@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Portal - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="login-page-body">
 
     <div class="login-container">
@@ -18,7 +21,8 @@
                     <span>Smart Library</span>
                 </div>
                 <h2>Welcome Back!</h2>
-                <p>Login to access your workspace, book your premium seats, and explore your plan updates seamlessly.</p>
+                <p>Login to access your workspace, book your premium seats, and explore your plan updates seamlessly.
+                </p>
             </div>
             <div class="sidebar-footer">
                 <p>© 2026 Smart Library Portal. All rights reserved.</p>
@@ -156,9 +160,9 @@
         tabUser.addEventListener("click", () => switchToRole("user"));
         tabAdmin.addEventListener("click", () => switchToRole("admin"));
 
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById("studentName").value.trim();
             const id = document.getElementById("userId").value.trim();
             const btn = document.querySelector(".btn-login");
@@ -177,39 +181,44 @@
                 btn.innerHTML = `Signing In... <i class="fa-solid fa-spinner fa-spin"></i>`;
 
                 // fetch('/api/login', {
-                fetch('/api/forgot-id',{
+                // fetch('/api/forgot-id',{
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ name, userId: id })
+                // })
+                fetch('/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, userId: id })
+                    body: JSON.stringify({ name, userId: id, role: loginRole })
                 })
-                .then(res => {
-                    if (!res.ok) {
-                        return res.json().then(data => { throw new Error(data.message || 'Login failed') });
-                    }
-                    return res.json();
-                })
-                .then(data => {
-                    btn.disabled = false;
-                    btn.innerHTML = originalText;
-
-                    if (data.success) {
-                        sessionStorage.setItem("studentName", data.name);
-                        sessionStorage.setItem("userId", data.userId);
-                        sessionStorage.setItem("role", data.role);
-                        sessionStorage.setItem("is_navigating", "true");
-
-                        if (data.role === 'admin') {
-                            window.location.href = "admin-dashbord.html";
-                        } else {
-                            window.location.href = "user-dashbord.html";
+                    .then(res => {
+                        if (!res.ok) {
+                            return res.json().then(data => { throw new Error(data.message || 'Login failed') });
                         }
-                    }
-                })
-                .catch(err => {
-                    btn.disabled = false;
-                    btn.innerHTML = originalText;
-                    alert("Error: " + err.message);
-                });
+                        return res.json();
+                    })
+                    .then(data => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+
+                        if (data.success) {
+                            sessionStorage.setItem("studentName", data.name);
+                            sessionStorage.setItem("userId", data.userId);
+                            sessionStorage.setItem("role", data.role);
+                            sessionStorage.setItem("is_navigating", "true");
+
+                            if (data.role === 'admin') {
+                                window.location.href = "admin-dashbord.html";
+                            } else {
+                                window.location.href = "user-dashbord.html";
+                            }
+                        }
+                    })
+                    .catch(err => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+                        alert("Error: " + err.message);
+                    });
             }
         });
 
@@ -254,7 +263,7 @@
             forgotStatus.textContent = "";
 
             // fetch('/api/forgot-id', {
-            fetch('/api/forgot-id',{
+            fetch('/api/forgot-id', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
@@ -276,4 +285,5 @@
         });
     </script>
 </body>
+
 </html>
