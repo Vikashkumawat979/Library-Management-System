@@ -326,11 +326,71 @@ app.delete('/api/admin/users/:uid', asyncRoute(async (req, res) => {
   }
 }));
 
+// // ==========================================
+// // 8. Book Actions APIs
+// // ==========================================
+// app.get('/api/books', asyncRoute(async (req, res) => {
+//   res.json({ success: true, books: await db.getBooks() });
+// }));
+
+// app.post('/api/admin/books/action', asyncRoute(async (req, res) => {
+//   const { userId, bookCode, actionType } = req.body;
+
+//   if (!userId || !bookCode || !actionType) {
+//     return res.status(400).json({ success: false, message: "Missing parameter fields." });
+//   }
+
+//   try {
+//     if (actionType === 'assign') {
+//       const result = await db.issueBook(userId, bookCode);
+//       res.json({ success: true, message: `Book issued successfully to ${result.user.name}.` });
+//     } else if (actionType === 'return') {
+//       const result = await db.returnBook(userId, bookCode);
+//       res.json({ success: true, message: `Book returned successfully by ${result.user.name}.` });
+//     } else {
+//       res.status(400).json({ success: false, message: "Invalid action type." });
+//     }
+//   } catch (err) {
+//     res.status(400).json({ success: false, message: err.message });
+//   }
+// }));
+
+// ==========================================
+// Helper Function: Google Books API se cover nikalna
+// ==========================================
+async function getCoverByTitle(title) {
+  try {
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}`);
+    const data = await response.json();
+    if (data.items && data.items[0]?.volumeInfo?.imageLinks?.thumbnail) {
+      return data.items[0].volumeInfo.imageLinks.thumbnail.replace('http://', 'https://');
+    }
+  } catch (err) {
+    console.error("Error fetching cover for title:", title);
+  }
+  return 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c';
+}
+
 // ==========================================
 // 8. Book Actions APIs
 // ==========================================
 app.get('/api/books', asyncRoute(async (req, res) => {
-  res.json({ success: true, books: await db.getBooks() });
+  const rawBooks = await db.getBooks();
+
+  const booksWithCovers = await Promise.all(
+    rawBooks.map(async (book) => {
+      let cover = book.coverImage || book.cover_image;
+      if (!cover) {
+        cover = await getCoverByTitle(book.title);
+      }
+      return {
+        ...book,
+        coverImage: cover
+      };
+    })
+  );
+
+  res.json({ success: true, books: booksWithCovers });
 }));
 
 app.post('/api/admin/books/action', asyncRoute(async (req, res) => {
