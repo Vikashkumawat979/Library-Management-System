@@ -356,19 +356,34 @@ app.delete('/api/admin/users/:uid', asyncRoute(async (req, res) => {
 // }));
 
 // ==========================================
-// Helper Function: Google Books API se cover nikalna
+// Helper Function: Multi-Source Dynamic Book Cover Fetcher
 // ==========================================
 async function getCoverByTitle(title) {
   try {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}`);
-    const data = await response.json();
-    if (data.items && data.items[0]?.volumeInfo?.imageLinks?.thumbnail) {
-      return data.items[0].volumeInfo.imageLinks.thumbnail.replace('http://', 'https://');
+    // 1. Try Google Books API (Broader Search Query)
+    const googleRes = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(title)}`);
+    const googleData = await googleRes.json();
+    
+    if (googleData.items && googleData.items[0]?.volumeInfo?.imageLinks) {
+      const img = googleData.items[0].volumeInfo.imageLinks;
+      const coverUrl = img.thumbnail || img.smallThumbnail;
+      if (coverUrl) {
+        return coverUrl.replace('http://', 'https://');
+      }
+    }
+
+    // 2. Fallback: Open Library API
+    const openLibRes = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(title)}&limit=1`);
+    const openLibData = await openLibRes.json();
+    if (openLibData.docs && openLibData.docs[0]?.cover_i) {
+      return `https://covers.openlibrary.org/b/id/${openLibData.docs[0].cover_i}-M.jpg`;
     }
   } catch (err) {
-    console.error("Error fetching cover for title:", title);
+    console.error("Error fetching cover for:", title, err.message);
   }
-  return 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c';
+
+  // 3. Final Fallback: Unique SVG Cover with Book Title (Taaki same photo na dikhe)
+  return `https://dummyimage.com/300x420/1e293b/ffffff.png&text=${encodeURIComponent(title)}`;
 }
 
 // ==========================================
@@ -381,7 +396,7 @@ app.get('/api/books', asyncRoute(async (req, res) => {
     rawBooks.map(async (book) => {
       let cover = book.coverImage || book.cover_image;
       
-      // Agar cover null hai ya default photo hai, toh title se dynamic cover layein
+      // Clear generic Unsplash fallback if present
       if (!cover || cover.includes('unsplash.com')) {
         cover = await getCoverByTitle(book.title);
       }
