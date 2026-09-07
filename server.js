@@ -380,9 +380,12 @@ app.get('/api/books', asyncRoute(async (req, res) => {
   const booksWithCovers = await Promise.all(
     rawBooks.map(async (book) => {
       let cover = book.coverImage || book.cover_image;
-      if (!cover) {
+      
+      // Agar cover null hai ya default photo hai, toh title se dynamic cover layein
+      if (!cover || cover.includes('unsplash.com')) {
         cover = await getCoverByTitle(book.title);
       }
+      
       return {
         ...book,
         coverImage: cover
@@ -391,28 +394,6 @@ app.get('/api/books', asyncRoute(async (req, res) => {
   );
 
   res.json({ success: true, books: booksWithCovers });
-}));
-
-app.post('/api/admin/books/action', asyncRoute(async (req, res) => {
-  const { userId, bookCode, actionType } = req.body;
-
-  if (!userId || !bookCode || !actionType) {
-    return res.status(400).json({ success: false, message: "Missing parameter fields." });
-  }
-
-  try {
-    if (actionType === 'assign') {
-      const result = await db.issueBook(userId, bookCode);
-      res.json({ success: true, message: `Book issued successfully to ${result.user.name}.` });
-    } else if (actionType === 'return') {
-      const result = await db.returnBook(userId, bookCode);
-      res.json({ success: true, message: `Book returned successfully by ${result.user.name}.` });
-    } else {
-      res.status(400).json({ success: false, message: "Invalid action type." });
-    }
-  } catch (err) {
-    res.status(400).json({ success: false, message: err.message });
-  }
 }));
 
 // ==========================================
